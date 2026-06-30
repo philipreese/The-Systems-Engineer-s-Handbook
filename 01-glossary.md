@@ -86,6 +86,42 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **wrong abstraction**: An abstraction built on an incorrect guess about what will change, which couples every caller to a false model of the problem. Worse than no abstraction at all, because unwinding the coupling costs more than the duplication it was meant to prevent. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
+**anti-corruption layer (ACL)**: A translation boundary, from Domain-Driven Design, placed between an internal bounded context and an external or legacy system whose model and vocabulary are incompatible with it. It translates the external system's shape into the internal domain's own vocabulary so foreign constraints never enter the core. First introduced in: [Part II, Ch 14](part2-software-architecture/ch14-abstraction-layers-when-to-add-one.md).
+
+**big ball of mud**: A monolith with no enforced internal module boundaries, where any component can call any other. The degenerate case a modular monolith is meant to prevent. First introduced in: [Part II, Ch 10](part2-software-architecture/ch10-monolith-vs-service-decomposition.md).
+
+**bounded context**: The largest architectural scope, from Domain-Driven Design (Eric Evans), within which a domain model's terms and rules remain internally consistent. The unit a service boundary should be drawn around. First introduced in: [Part II, Ch 13](part2-software-architecture/ch13-coupling-cohesion-architecture-level.md).
+
+**compensating action**: An explicit action that reverses the effect of a previously completed step in a distributed workflow, used in place of a database rollback when a multi-step process spans more than one service. First introduced in: [Part II, Ch 17](part2-software-architecture/ch17-sync-vs-async-communication.md).
+
+**CQRS (Command Query Responsibility Segregation)**: An architectural pattern that separates the model used to write data from the model used to read it, commonly used across service boundaries to build a fast, local, read-optimized projection of data another service owns. First introduced in: [Part II, Ch 18](part2-software-architecture/ch18-data-ownership-boundaries.md).
+
+**database-per-service pattern**: The rule that each service's datastore is reachable only by that service; every other service accesses its data exclusively through its API. The hard prerequisite for treating a decomposed service as actually independent. First introduced in: [Part II, Ch 18](part2-software-architecture/ch18-data-ownership-boundaries.md).
+
+**Data Transfer Object (DTO)**: A data structure designed specifically for a boundary crossing — an API request or response — distinct from the domain model or database entity it is mapped to or from. First introduced in: [Part II, Ch 11](part2-software-architecture/ch11-layered-hexagonal-ports-adapters.md).
+
+**Dependency Inversion Principle (DIP)**: High-level (stable) modules must not depend on low-level (volatile) modules; both should depend on an abstraction, and that abstraction must be owned by the high-level side. First introduced in: [Part II, Ch 12](part2-software-architecture/ch12-dependency-direction-inversion.md).
+
+**hexagonal architecture (ports-and-adapters)**: An internal architecture, introduced by Alistair Cockburn, in which business logic sits at the center and defines the interfaces ("ports") it needs; infrastructure connects to the core by implementing those interfaces ("adapters"), so dependencies always point inward. First introduced in: [Part II, Ch 11](part2-software-architecture/ch11-layered-hexagonal-ports-adapters.md).
+
+**layer leakage**: The failure mode where infrastructure or implementation details surface above the layer meant to hide them — for example, a SQL exception reaching the API layer — defeating the information hiding the layering was supposed to provide. First introduced in: [Part II, Ch 11](part2-software-architecture/ch11-layered-hexagonal-ports-adapters.md).
+
+**modular monolith**: A single deployable unit with strictly enforced internal module boundaries and information hiding, as distinct from a big ball of mud. The recommended default starting architecture for most systems. First introduced in: [Part II, Ch 10](part2-software-architecture/ch10-monolith-vs-service-decomposition.md).
+
+**pass-through layer**: An architectural layer that forwards a call unchanged, hiding no decision and performing no transformation — the dominant failure mode of adding layers as a default rather than in response to real volatility. First introduced in: [Part II, Ch 14](part2-software-architecture/ch14-abstraction-layers-when-to-add-one.md).
+
+**progressive disclosure**: An API design strategy where the default request and response are as simple as possible, with advanced capability available through explicit optional parameters or expansion rather than present by default. First introduced in: [Part II, Ch 15](part2-software-architecture/ch15-api-surface-design-expose-hide.md).
+
+**repository pattern**: An interface, owned by the domain, that abstracts data access behind domain vocabulary (e.g., `findUserById`) rather than a specific database client, allowing the underlying storage implementation to be swapped without changing the code that depends on it. First introduced in: [Part II, Ch 12](part2-software-architecture/ch12-dependency-direction-inversion.md).
+
+**saga pattern**: A pattern for maintaining consistency across a multi-step workflow spanning several services, using a sequence of local transactions and explicit compensating actions instead of a single atomic database transaction. First introduced in: [Part II, Ch 17](part2-software-architecture/ch17-sync-vs-async-communication.md).
+
+**strangler fig pattern**: An incremental migration pattern, named by Martin Fowler, in which a new service is grown around the edge of an existing monolith — intercepting a growing slice of live traffic — until the corresponding functionality can be removed from the monolith entirely. First introduced in: [Part II, Ch 10](part2-software-architecture/ch10-monolith-vs-service-decomposition.md).
+
+**sunset pattern**: A structured, time-bound lifecycle for retiring an obsolete API version — active, deprecated, sunset, removal — communicated through escalating, programmatic signals rather than documentation alone. First introduced in: [Part II, Ch 16](part2-software-architecture/ch16-versioning-backward-compatibility.md).
+
+**temporal coupling**: The requirement that a caller and a callee both be available, healthy, and reachable at the same instant for an interaction to succeed — the defining property of synchronous communication, and the architectural expression of connascence of execution order. First introduced in: [Part II, Ch 13](part2-software-architecture/ch13-coupling-cohesion-architecture-level.md).
+
 ---
 
 ## Format
