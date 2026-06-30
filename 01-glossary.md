@@ -22,11 +22,19 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **distributed monolith**: A system decomposed into multiple services that remain tightly coupled through a shared database schema, undocumented contracts, or implicit timing dependencies. Has the operational complexity of microservices with the coupling of a monolith. First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
 
+**encapsulation**: The mechanical bundling of data with the methods that operate on it. A language feature, not an architectural guarantee — encapsulation hides implementation but does not by itself hide volatile design decisions. Contrasted with information hiding. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
+
 **efferent coupling (Ce)**: The number of external components a given component depends on. High efferent coupling makes a component fragile — vulnerable to changes in any of its dependencies. Contrasted with afferent coupling. First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
 
 **essential complexity**: Complexity inherent to the problem domain that cannot be eliminated without changing what the system does. Contrasted with accidental complexity. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
 
+**information hiding**: The deliberate concealment of a design decision that is likely to change, as distinct from merely hiding implementation. Coined by Parnas (1972). The goal is to isolate volatility behind a stable interface so that an internal change does not propagate to callers. Contrasted with encapsulation. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
+
 **instability metric**: I = Ce / (Ca + Ce). A value of 0 indicates a maximally stable component (depended on by many, depends on nothing); a value of 1 indicates a maximally unstable component (depends on many, depended on by nothing). First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
+
+**leaky abstraction**: Spolsky's Law (2002): all non-trivial abstractions, to some degree, leak — the implementation details they were meant to hide eventually surface under load, failure, or scale. The design question is not whether an abstraction will leak, but when, how badly, and whether the system was built to survive it. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
+
+**Rule of Three**: A heuristic for deferring abstraction: tolerate duplication until a third genuinely similar use case appears before extracting a shared interface. Guards against premature abstraction built on too little evidence of an actual pattern. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
 **shotgun surgery**: A symptom of low cohesion where a single conceptual change requires modifying many files scattered across a codebase. Indicates the concept is not owned by any one component. First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
 
@@ -39,6 +47,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **optimization target**: An objective a system is designed to optimize — latency, throughput, reliability, cost of change, etc. Targets may be explicit (documented) or implicit (inferred). First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
 
 **optimization target drift**: The phenomenon where a system's actual optimization targets diverge from its intended ones over time due to accumulated changes, hotfixes, and operational adjustments. First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
+
+**wrong abstraction**: An abstraction built on an incorrect guess about what will change, which couples every caller to a false model of the problem. Worse than no abstraction at all, because unwinding the coupling costs more than the duplication it was meant to prevent. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
 ---
 

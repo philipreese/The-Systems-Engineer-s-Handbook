@@ -13,7 +13,7 @@ If you read only one part, read this one. The vocabulary and concepts introduced
 | Ch 01 | What Engineering Actually Optimizes | [Complete] |
 | Ch 02 | Complexity Is the Enemy | [Complete] |
 | Ch 03 | Coupling and Cohesion | [Complete] |
-| Ch 04 | Abstraction and Information Hiding | [Stub] |
+| Ch 04 | Abstraction and Information Hiding | [Complete] |
 | Ch 05 | Designing for Change | [Stub] |
 | Ch 06 | Cost Models and Mechanical Sympathy | [Stub] |
 | Ch 07 | Reliability as a Design Principle | [Stub] |
