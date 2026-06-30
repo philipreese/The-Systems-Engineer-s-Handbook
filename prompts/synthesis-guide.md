@@ -21,7 +21,7 @@ Read these files before synthesizing any chapter:
 1. `00-style-guide.md` — the chapter template, recommendation labels, and writing rules
 2. `01-glossary.md` — terms already defined; do not redefine them
 3. `02-table-of-contents.md` — confirm which chapter number this is and its position
-4. `prompts/part1-chapter-specs.md` (or the relevant part's spec file) — the "Do NOT cover"
+4. `prompts/part2-chapter-specs.md` (or the relevant part's spec file) — the "Do NOT cover"
    list is the most important thing you will read. It tells you what to cut from both drafts.
 
 ---
