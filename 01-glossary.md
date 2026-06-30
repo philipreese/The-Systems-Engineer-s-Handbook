@@ -6,6 +6,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 ---
 
+**Application Binary Interface (ABI)**: The physical, compiled contract between two pieces of code — exact memory layout, struct padding, register usage, and calling convention — as distinct from the logical, source-level API contract. Two compilers agreeing on behavior does not mean they agree on the bytes a struct contains. First introduced in: [Part III, Ch 26](part03-api-design/ch26-ffi-and-native-binding-design.md).
+
 **Architecture Decision Record (ADR)**: A lightweight document stored in the repository that records what was decided, the context and constraints present at decision time, and what alternatives were rejected and why. The mechanism by which a decision's reasoning outlives the people who made it. First introduced in: [Part I, Ch 09](part01-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
 
 **afferent coupling (Ca)**: The number of external components that depend on a given component. High afferent coupling means changes to this component have wide impact. Contrasted with efferent coupling. First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
@@ -18,11 +20,17 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **accidental complexity**: Complexity introduced by the engineering solution rather than the problem domain itself. Can be reduced by changing the solution. Contrasted with essential complexity. First introduced in: [Part I, Ch 02](part01-systems-thinking/ch02-complexity-is-the-enemy.md).
 
+**the action problem**: The recurring case in resource-oriented API design where a real business operation — canceling an order, refunding a payment — doesn't map cleanly onto standard CRUD verbs (GET/PUT/PATCH/DELETE), forcing a choice between generic state patching, an explicit sub-resource action endpoint, or a separate action resource. First introduced in: [Part III, Ch 20](part03-api-design/ch20-resource-modeling.md).
+
 **Cynefin framework**: A sense-making model (Snowden) that classifies problems by the relationship between cause and effect: Simple (best practice applies), Complicated (analysis required, right answer exists), Complex (probe-sense-respond, no single right answer), Chaotic (act first to restore order). Most architectural decisions are complicated. First introduced in: [Part I, Ch 09](part01-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
+
+**cursor (keyset pagination)**: A stable, unique, sortable pointer to a specific position in a collection, used to anchor a pagination request ("items after this one") instead of a relative offset counted from the start. Lets the database jump directly to the position via an index, giving constant performance regardless of depth and immunity to page drift. First introduced in: [Part III, Ch 23](part03-api-design/ch23-pagination-and-streaming.md).
 
 **cyclomatic complexity**: A quantitative measure of the number of independent execution paths through a program, derived from the control flow graph. Higher values indicate harder-to-test and harder-to-reason-about code. First introduced in: [Part I, Ch 02](part01-systems-thinking/ch02-complexity-is-the-enemy.md).
 
 **cohesion**: The degree to which the elements inside a single component belong together and serve a single well-defined purpose. High cohesion reduces internal complexity. First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
+
+**confused deputy problem**: A failure mode where a service uses its own elevated, perimeter-trusted privileges to act on a caller's behalf without verifying that the caller was actually authorized to request that action — the service isn't compromised, it's tricked into misusing its own authority. First introduced in: [Part III, Ch 24](part03-api-design/ch24-authentication-authorization-boundaries.md).
 
 **connascence**: A taxonomy for evaluating the strength of coupling between two components. Two components are connascent if a change in one requires a change in the other. Forms range from weak (name, type) to strong (execution order, timing). First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
 
@@ -31,6 +39,10 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **CAP theorem**: In the presence of a network partition, a distributed system must choose between consistency (every read receives the most recent write or an error) and availability (every request receives a non-error response). Partition tolerance is not optional in real distributed systems. First introduced in: [Part I, Ch 07](part01-systems-thinking/ch07-reliability-as-a-design-principle.md).
 
 **Conway's Law**: Organizations that design systems are constrained to produce designs that mirror their own communication structures. Local team autonomy produces systems with those team boundaries baked in — which may not be the correct system boundaries. First introduced in: [Part I, Ch 08](part01-systems-thinking/ch08-local-vs-global-optimization.md).
+
+**consumer-driven contract test**: A test, authored from the consumer's expectations of an API rather than the provider's implementation, that runs against the provider to verify a proposed change won't break that specific known consumer before it ships. The mechanism formal change management uses to replace direct, synchronous coordination once consumers can't be reached directly. First introduced in: [Part III, Ch 25](part03-api-design/ch25-internal-vs-external-api-design.md).
+
+**correlation ID**: A unique identifier included in an error response (and propagated through internal logs and traces) that lets a caller hand a single failure back to the provider and have it matched to the exact request that produced it. First introduced in: [Part III, Ch 21](part03-api-design/ch21-error-handling-contracts.md).
 
 **cost of change**: How expensive it is to modify a system over time, measured in engineering time, risk, and coordination overhead. Distinct from cost of execution. First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 
@@ -44,6 +56,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **fail-fast**: The design principle of terminating execution immediately upon detecting an invalid or inconsistent state, rather than continuing in a potentially corrupted state. Converts wrong-answer failures into crash failures — visible and bounded rather than silent and spreading. First introduced in: [Part I, Ch 07](part01-systems-thinking/ch07-reliability-as-a-design-principle.md).
 
+**Foreign Function Interface (FFI)**: The mechanism that lets code written in one language directly call routines compiled in another, within the same process. Information hiding under the harshest possible constraints: no shared garbage collector, no shared type system, and a mistake can terminate the entire host process rather than degrade gracefully. First introduced in: [Part III, Ch 26](part03-api-design/ch26-ffi-and-native-binding-design.md).
+
 **future-proofing**: Speculative anticipation of unknown future requirements through upfront generality, as distinct from designing for change along a known, specific axis of variation. Usually an anti-pattern — the complexity cost is paid immediately for a benefit that may never arrive. First introduced in: [Part I, Ch 05](part01-systems-thinking/ch05-designing-for-change.md).
 
 **latency hierarchy**: The approximate cost, in time, of retrieving data from each layer of a real system — CPU cache, RAM, SSD, and network — spanning many orders of magnitude rather than a smooth gradient. Memorized by systems engineers as a baseline for reasoning about architectural cost. First introduced in: [Part I, Ch 06](part01-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md).
@@ -53,6 +67,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **mechanical sympathy**: The principle, popularized by Martin Thompson, that software performs better when it respects how the underlying hardware actually executes instructions, moves data, and manages memory, rather than fighting those properties for the sake of abstract code cleanliness. First introduced in: [Part I, Ch 06](part01-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md).
 
 **MVCC (Multi-Version Concurrency Control)**: A concurrency strategy where every update creates a new version of a row rather than mutating it in place, allowing readers and writers to proceed without blocking each other at the cost of storage overhead and background cleanup (vacuuming). Contrasted with pessimistic locking. First introduced in: [Part I, Ch 06](part01-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md).
+
+**idempotency key**: A unique identifier, generated by the client per logical operation, that the server uses to recognize a retried request and return the original cached result instead of re-executing its side effect. Enforced correctly with a database uniqueness constraint, written atomically with the side effect, never with a separate read-then-write check. First introduced in: [Part III, Ch 22](part03-api-design/ch22-idempotency.md).
 
 **information hiding**: The deliberate concealment of a design decision that is likely to change, as distinct from merely hiding implementation. Coined by Parnas (1972). The goal is to isolate volatility behind a stable interface so that an internal change does not propagate to callers. Contrasted with encapsulation. First introduced in: [Part I, Ch 04](part01-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
@@ -74,6 +90,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **partial failure**: The condition in distributed systems where some components succeed and others fail simultaneously, producing a state that is neither success nor failure globally. The normal operational mode of distributed systems, not an edge case. First introduced in: [Part I, Ch 07](part01-systems-thinking/ch07-reliability-as-a-design-principle.md). An objective a system is designed to optimize — latency, throughput, reliability, cost of change, etc. Targets may be explicit (documented) or implicit (inferred). First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 
+**page drift**: The instability that offset-based pagination suffers under concurrent writes — an insert or delete shifts which items fall on which page between requests, causing a client to silently see duplicates or skip items entirely. First introduced in: [Part III, Ch 23](part03-api-design/ch23-pagination-and-streaming.md).
+
 **optimization target drift**: The phenomenon where a system's actual optimization targets diverge from its intended ones over time due to accumulated changes, hotfixes, and operational adjustments. First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 
 **Open/Closed Principle (OCP)**: Software entities should be open for extension but closed for modification — new behavior is added through new code rather than by editing existing, tested code. A pragmatic lens for managing regression risk where change is genuinely additive, not a mandate to apply everywhere. First introduced in: [Part I, Ch 05](part01-systems-thinking/ch05-designing-for-change.md).
@@ -83,6 +101,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **Theory of Constraints**: Goldratt's principle that system throughput is bounded by the single slowest component (the bottleneck). Optimizing any non-bottleneck component has no effect on system throughput and often increases load on the actual bottleneck. First introduced in: [Part I, Ch 08](part01-systems-thinking/ch08-local-vs-global-optimization.md).
 
 **Write-Ahead Log (WAL)**: A durability mechanism where a database appends transaction intent to a sequential log before updating data files, enabling durability guarantees without paying the latency cost of random I/O on every commit. On crash, the log is replayed to recover committed transactions. First introduced in: [Part I, Ch 07](part01-systems-thinking/ch07-reliability-as-a-design-principle.md).
+
+**zero-trust architecture**: A security model that re-verifies identity and authorization at every service boundary instead of trusting requests based on network location alone. The structural response to the confused deputy problem — no internal call is trusted just because it originated inside the perimeter. First introduced in: [Part III, Ch 24](part03-api-design/ch24-authentication-authorization-boundaries.md).
 
 **wrong abstraction**: An abstraction built on an incorrect guess about what will change, which couples every caller to a false model of the problem. Worse than no abstraction at all, because unwinding the coupling costs more than the duplication it was meant to prevent. First introduced in: [Part I, Ch 04](part01-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
@@ -101,6 +121,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **Data Transfer Object (DTO)**: A data structure designed specifically for a boundary crossing — an API request or response — distinct from the domain model or database entity it is mapped to or from. First introduced in: [Part II, Ch 11](part02-software-architecture/ch11-layered-hexagonal-ports-adapters.md).
 
 **Dependency Inversion Principle (DIP)**: High-level (stable) modules must not depend on low-level (volatile) modules; both should depend on an abstraction, and that abstraction must be owned by the high-level side. First introduced in: [Part II, Ch 12](part02-software-architecture/ch12-dependency-direction-inversion.md).
+
+**event-carried state transfer**: An event payload design where the message carries the full state of the resource at the moment of the event ("a fat event"), rather than only an identifier — letting consumers act without calling back to the publisher, at the cost of risking eventual-consistency collapse if delivery lags behind newer mutations. First introduced in: [Part III, Ch 19](part03-api-design/ch19-rest-vs-rpc-vs-event-driven.md).
+
+**HATEOAS (Hypermedia As The Engine Of Application State)**: REST's textbook ideal in which server responses embed the links describing every action currently available, so a client never needs prior knowledge of the API's URL structure. Almost never implemented in production — the coordination and tooling cost rarely outweighs disciplined, documented, pragmatic REST. First introduced in: [Part III, Ch 19](part03-api-design/ch19-rest-vs-rpc-vs-event-driven.md).
+
+**Hyrum's Law**: With a sufficient number of consumers, every observable behavior of a system — whether documented as part of the contract or not — will eventually be depended on by somebody. Coined at Google. The mechanism behind accidental externalization: an undocumented sort order or incidental field becomes an implicit contract the moment enough consumers rely on it. First introduced in: [Part III, Ch 25](part03-api-design/ch25-internal-vs-external-api-design.md).
 
 **hexagonal architecture (ports-and-adapters)**: An internal architecture, introduced by Alistair Cockburn, in which business logic sits at the center and defines the interfaces ("ports") it needs; infrastructure connects to the core by implementing those interfaces ("adapters"), so dependencies always point inward. First introduced in: [Part II, Ch 11](part02-software-architecture/ch11-layered-hexagonal-ports-adapters.md).
 

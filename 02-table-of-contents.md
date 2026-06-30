@@ -46,14 +46,14 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 19 | REST vs. RPC vs. Event-Driven | [Stub] |
-| Ch 20 | Resource Modeling | [Stub] |
-| Ch 21 | Error Handling Contracts | [Stub] |
-| Ch 22 | Idempotency | [Stub] |
-| Ch 23 | Pagination and Streaming | [Stub] |
-| Ch 24 | Authentication and Authorization Boundaries | [Stub] |
-| Ch 25 | Internal vs. External API Design | [Stub] |
-| Ch 26 | FFI and Native Binding Design | [Stub] |
+| Ch 19 | REST vs. RPC vs. Event-Driven | [Complete] |
+| Ch 20 | Resource Modeling | [Complete] |
+| Ch 21 | Error Handling Contracts | [Complete] |
+| Ch 22 | Idempotency | [Complete] |
+| Ch 23 | Pagination and Streaming | [Complete] |
+| Ch 24 | Authentication and Authorization Boundaries | [Complete] |
+| Ch 25 | Internal vs. External API Design | [Complete] |
+| Ch 26 | FFI and Native Binding Design | [Complete] |
 
 ---
 
