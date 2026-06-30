@@ -18,6 +18,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **accidental complexity**: Complexity introduced by the engineering solution rather than the problem domain itself. Can be reduced by changing the solution. Contrasted with essential complexity. First introduced in: [Part I, Ch 02](part01-systems-thinking/ch02-complexity-is-the-enemy.md).
 
+**the action problem**: The recurring case in resource-oriented API design where a real business operation — canceling an order, refunding a payment — doesn't map cleanly onto standard CRUD verbs (GET/PUT/PATCH/DELETE), forcing a choice between generic state patching, an explicit sub-resource action endpoint, or a separate action resource. First introduced in: [Part III, Ch 20](part03-api-design/ch20-resource-modeling.md).
+
 **Cynefin framework**: A sense-making model (Snowden) that classifies problems by the relationship between cause and effect: Simple (best practice applies), Complicated (analysis required, right answer exists), Complex (probe-sense-respond, no single right answer), Chaotic (act first to restore order). Most architectural decisions are complicated. First introduced in: [Part I, Ch 09](part01-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
 
 **cyclomatic complexity**: A quantitative measure of the number of independent execution paths through a program, derived from the control flow graph. Higher values indicate harder-to-test and harder-to-reason-about code. First introduced in: [Part I, Ch 02](part01-systems-thinking/ch02-complexity-is-the-enemy.md).
