@@ -10,7 +10,7 @@ If you read only one part, read this one. The vocabulary and concepts introduced
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 01 | What Engineering Actually Optimizes | [Stub] |
+| Ch 01 | What Engineering Actually Optimizes | [Complete] |
 | Ch 02 | Complexity Is the Enemy | [Stub] |
 | Ch 03 | Coupling and Cohesion | [Stub] |
 | Ch 04 | Abstraction and Information Hiding | [Stub] |
