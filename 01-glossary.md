@@ -6,11 +6,19 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 ---
 
+**Architecture Decision Record (ADR)**: A lightweight document stored in the repository that records what was decided, the context and constraints present at decision time, and what alternatives were rejected and why. The mechanism by which a decision's reasoning outlives the people who made it. First introduced in: [Part I, Ch 09](part1-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
+
 **afferent coupling (Ca)**: The number of external components that depend on a given component. High afferent coupling means changes to this component have wide impact. Contrasted with efferent coupling. First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
 
 **axis of variation**: A specific, named dimension along which a system is expected to change — an authentication method, a storage backend, a data format. Identifying real axes of variation is what distinguishes designing for change from future-proofing. First introduced in: [Part I, Ch 05](part1-systems-thinking/ch05-designing-for-change.md).
 
+**backpressure**: A flow-control mechanism that enforces a hard upper bound on queue depth and rejects new requests once that bound is reached, preventing queue exhaustion and node crashes at the cost of requiring upstream callers to handle rejection. Contrasted with unbounded queues. First introduced in: [Part I, Ch 08](part1-systems-thinking/ch08-local-vs-global-optimization.md). A specific, named dimension along which a system is expected to change — an authentication method, a storage backend, a data format. Identifying real axes of variation is what distinguishes designing for change from future-proofing. First introduced in: [Part I, Ch 05](part1-systems-thinking/ch05-designing-for-change.md).
+
+**blast radius**: The scope of damage a wrong decision causes to the broader system or business. Combined with reversibility, determines how much deliberation a decision warrants. First introduced in: [Part I, Ch 09](part1-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
+
 **accidental complexity**: Complexity introduced by the engineering solution rather than the problem domain itself. Can be reduced by changing the solution. Contrasted with essential complexity. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
+
+**Cynefin framework**: A sense-making model (Snowden) that classifies problems by the relationship between cause and effect: Simple (best practice applies), Complicated (analysis required, right answer exists), Complex (probe-sense-respond, no single right answer), Chaotic (act first to restore order). Most architectural decisions are complicated. First introduced in: [Part I, Ch 09](part1-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
 
 **cyclomatic complexity**: A quantitative measure of the number of independent execution paths through a program, derived from the control flow graph. Higher values indicate harder-to-test and harder-to-reason-about code. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
 
@@ -19,6 +27,10 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **connascence**: A taxonomy for evaluating the strength of coupling between two components. Two components are connascent if a change in one requires a change in the other. Forms range from weak (name, type) to strong (execution order, timing). First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
 
 **coupling**: The degree to which one component's behavior depends on another component's state, structure, or timing. First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
+
+**CAP theorem**: In the presence of a network partition, a distributed system must choose between consistency (every read receives the most recent write or an error) and availability (every request receives a non-error response). Partition tolerance is not optional in real distributed systems. First introduced in: [Part I, Ch 07](part1-systems-thinking/ch07-reliability-as-a-design-principle.md).
+
+**Conway's Law**: Organizations that design systems are constrained to produce designs that mirror their own communication structures. Local team autonomy produces systems with those team boundaries baked in — which may not be the correct system boundaries. First introduced in: [Part I, Ch 08](part1-systems-thinking/ch08-local-vs-global-optimization.md).
 
 **cost of change**: How expensive it is to modify a system over time, measured in engineering time, risk, and coordination overhead. Distinct from cost of execution. First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
 
@@ -30,9 +42,13 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **essential complexity**: Complexity inherent to the problem domain that cannot be eliminated without changing what the system does. Contrasted with accidental complexity. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
 
+**fail-fast**: The design principle of terminating execution immediately upon detecting an invalid or inconsistent state, rather than continuing in a potentially corrupted state. Converts wrong-answer failures into crash failures — visible and bounded rather than silent and spreading. First introduced in: [Part I, Ch 07](part1-systems-thinking/ch07-reliability-as-a-design-principle.md).
+
 **future-proofing**: Speculative anticipation of unknown future requirements through upfront generality, as distinct from designing for change along a known, specific axis of variation. Usually an anti-pattern — the complexity cost is paid immediately for a benefit that may never arrive. First introduced in: [Part I, Ch 05](part1-systems-thinking/ch05-designing-for-change.md).
 
 **latency hierarchy**: The approximate cost, in time, of retrieving data from each layer of a real system — CPU cache, RAM, SSD, and network — spanning many orders of magnitude rather than a smooth gradient. Memorized by systems engineers as a baseline for reasoning about architectural cost. First introduced in: [Part I, Ch 06](part1-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md).
+
+**Little's Law**: L = λW. In any stable queuing system, queue depth (L) equals arrival rate (λ) multiplied by average time in system (W). Explains why reducing local latency can increase arrival rate at a downstream component, growing queue depth and worsening system-level latency. First introduced in: [Part I, Ch 08](part1-systems-thinking/ch08-local-vs-global-optimization.md). The approximate cost, in time, of retrieving data from each layer of a real system — CPU cache, RAM, SSD, and network — spanning many orders of magnitude rather than a smooth gradient. Memorized by systems engineers as a baseline for reasoning about architectural cost. First introduced in: [Part I, Ch 06](part1-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md).
 
 **mechanical sympathy**: The principle, popularized by Martin Thompson, that software performs better when it respects how the underlying hardware actually executes instructions, moves data, and manages memory, rather than fighting those properties for the sake of abstract code cleanliness. First introduced in: [Part I, Ch 06](part1-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md).
 
@@ -56,9 +72,17 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **optimization target**: An objective a system is designed to optimize — latency, throughput, reliability, cost of change, etc. Targets may be explicit (documented) or implicit (inferred). First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
 
+**partial failure**: The condition in distributed systems where some components succeed and others fail simultaneously, producing a state that is neither success nor failure globally. The normal operational mode of distributed systems, not an edge case. First introduced in: [Part I, Ch 07](part1-systems-thinking/ch07-reliability-as-a-design-principle.md). An objective a system is designed to optimize — latency, throughput, reliability, cost of change, etc. Targets may be explicit (documented) or implicit (inferred). First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
+
 **optimization target drift**: The phenomenon where a system's actual optimization targets diverge from its intended ones over time due to accumulated changes, hotfixes, and operational adjustments. First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
 
 **Open/Closed Principle (OCP)**: Software entities should be open for extension but closed for modification — new behavior is added through new code rather than by editing existing, tested code. A pragmatic lens for managing regression risk where change is genuinely additive, not a mandate to apply everywhere. First introduced in: [Part I, Ch 05](part1-systems-thinking/ch05-designing-for-change.md).
+
+**reversibility**: How expensive it is to undo a decision. Combined with blast radius, determines how much deliberation a decision warrants. Low-reversibility / high-blast-radius decisions require heavy deliberation; high-reversibility / low-blast-radius decisions should be made quickly. First introduced in: [Part I, Ch 09](part1-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
+
+**Theory of Constraints**: Goldratt's principle that system throughput is bounded by the single slowest component (the bottleneck). Optimizing any non-bottleneck component has no effect on system throughput and often increases load on the actual bottleneck. First introduced in: [Part I, Ch 08](part1-systems-thinking/ch08-local-vs-global-optimization.md).
+
+**Write-Ahead Log (WAL)**: A durability mechanism where a database appends transaction intent to a sequential log before updating data files, enabling durability guarantees without paying the latency cost of random I/O on every commit. On crash, the log is replayed to recover committed transactions. First introduced in: [Part I, Ch 07](part1-systems-thinking/ch07-reliability-as-a-design-principle.md).
 
 **wrong abstraction**: An abstraction built on an incorrect guess about what will change, which couples every caller to a false model of the problem. Worse than no abstraction at all, because unwinding the coupling costs more than the duplication it was meant to prevent. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
