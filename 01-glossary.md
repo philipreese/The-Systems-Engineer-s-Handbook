@@ -38,6 +38,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **Conway's Law**: Organizations that design systems are constrained to produce designs that mirror their own communication structures. Local team autonomy produces systems with those team boundaries baked in — which may not be the correct system boundaries. First introduced in: [Part I, Ch 08](part01-systems-thinking/ch08-local-vs-global-optimization.md).
 
+**consumer-driven contract test**: A test, authored from the consumer's expectations of an API rather than the provider's implementation, that runs against the provider to verify a proposed change won't break that specific known consumer before it ships. The mechanism formal change management uses to replace direct, synchronous coordination once consumers can't be reached directly. First introduced in: [Part III, Ch 25](part03-api-design/ch25-internal-vs-external-api-design.md).
+
 **correlation ID**: A unique identifier included in an error response (and propagated through internal logs and traces) that lets a caller hand a single failure back to the provider and have it matched to the exact request that produced it. First introduced in: [Part III, Ch 21](part03-api-design/ch21-error-handling-contracts.md).
 
 **cost of change**: How expensive it is to modify a system over time, measured in engineering time, risk, and coordination overhead. Distinct from cost of execution. First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
@@ -119,6 +121,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **event-carried state transfer**: An event payload design where the message carries the full state of the resource at the moment of the event ("a fat event"), rather than only an identifier — letting consumers act without calling back to the publisher, at the cost of risking eventual-consistency collapse if delivery lags behind newer mutations. First introduced in: [Part III, Ch 19](part03-api-design/ch19-rest-vs-rpc-vs-event-driven.md).
 
 **HATEOAS (Hypermedia As The Engine Of Application State)**: REST's textbook ideal in which server responses embed the links describing every action currently available, so a client never needs prior knowledge of the API's URL structure. Almost never implemented in production — the coordination and tooling cost rarely outweighs disciplined, documented, pragmatic REST. First introduced in: [Part III, Ch 19](part03-api-design/ch19-rest-vs-rpc-vs-event-driven.md).
+
+**Hyrum's Law**: With a sufficient number of consumers, every observable behavior of a system — whether documented as part of the contract or not — will eventually be depended on by somebody. Coined at Google. The mechanism behind accidental externalization: an undocumented sort order or incidental field becomes an implicit contract the moment enough consumers rely on it. First introduced in: [Part III, Ch 25](part03-api-design/ch25-internal-vs-external-api-design.md).
 
 **hexagonal architecture (ports-and-adapters)**: An internal architecture, introduced by Alistair Cockburn, in which business logic sits at the center and defines the interfaces ("ports") it needs; infrastructure connects to the core by implementing those interfaces ("adapters"), so dependencies always point inward. First introduced in: [Part II, Ch 11](part02-software-architecture/ch11-layered-hexagonal-ports-adapters.md).
 

@@ -14,7 +14,7 @@ How to design interfaces — the contracts between systems and between teams. Co
 | Ch 22 | Idempotency | [Complete] |
 | Ch 23 | Pagination and Streaming | [Complete] |
 | Ch 24 | Authentication and Authorization Boundaries | [Complete] |
-| Ch 25 | Internal vs. External API Design | [Stub] |
+| Ch 25 | Internal vs. External API Design | [Complete] |
 | Ch 26 | FFI and Native Binding Design | [Stub] |
 
 ---
