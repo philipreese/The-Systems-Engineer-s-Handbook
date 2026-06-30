@@ -6,6 +6,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 ---
 
+**Application Binary Interface (ABI)**: The physical, compiled contract between two pieces of code — exact memory layout, struct padding, register usage, and calling convention — as distinct from the logical, source-level API contract. Two compilers agreeing on behavior does not mean they agree on the bytes a struct contains. First introduced in: [Part III, Ch 26](part03-api-design/ch26-ffi-and-native-binding-design.md).
+
 **Architecture Decision Record (ADR)**: A lightweight document stored in the repository that records what was decided, the context and constraints present at decision time, and what alternatives were rejected and why. The mechanism by which a decision's reasoning outlives the people who made it. First introduced in: [Part I, Ch 09](part01-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
 
 **afferent coupling (Ca)**: The number of external components that depend on a given component. High afferent coupling means changes to this component have wide impact. Contrasted with efferent coupling. First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
@@ -53,6 +55,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **essential complexity**: Complexity inherent to the problem domain that cannot be eliminated without changing what the system does. Contrasted with accidental complexity. First introduced in: [Part I, Ch 02](part01-systems-thinking/ch02-complexity-is-the-enemy.md).
 
 **fail-fast**: The design principle of terminating execution immediately upon detecting an invalid or inconsistent state, rather than continuing in a potentially corrupted state. Converts wrong-answer failures into crash failures — visible and bounded rather than silent and spreading. First introduced in: [Part I, Ch 07](part01-systems-thinking/ch07-reliability-as-a-design-principle.md).
+
+**Foreign Function Interface (FFI)**: The mechanism that lets code written in one language directly call routines compiled in another, within the same process. Information hiding under the harshest possible constraints: no shared garbage collector, no shared type system, and a mistake can terminate the entire host process rather than degrade gracefully. First introduced in: [Part III, Ch 26](part03-api-design/ch26-ffi-and-native-binding-design.md).
 
 **future-proofing**: Speculative anticipation of unknown future requirements through upfront generality, as distinct from designing for change along a known, specific axis of variation. Usually an anti-pattern — the complexity cost is paid immediately for a benefit that may never arrive. First introduced in: [Part I, Ch 05](part01-systems-thinking/ch05-designing-for-change.md).
 
