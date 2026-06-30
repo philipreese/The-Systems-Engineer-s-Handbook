@@ -89,7 +89,7 @@ Prefer real systems over hypothetical examples. When a real system illustrates a
 Link between chapters using relative markdown paths:
 
 ```
-See [Coupling and Cohesion](../part1-systems-thinking/ch03-coupling-and-cohesion.md) for the formal definitions used here.
+See [Coupling and Cohesion](../part01-systems-thinking/ch03-coupling-and-cohesion.md) for the formal definitions used here.
 ```
 
 ---

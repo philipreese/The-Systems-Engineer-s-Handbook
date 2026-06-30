@@ -34,7 +34,18 @@ A reference on how experienced engineers reason about systems, trade-offs, and a
 This is a multi-part engineering reference book organized into:
 
 - Part I: Systems Thinking (foundational mental models)
-- Part II+: Architecture, APIs, Code Organization, Testing, Process, etc.
+- Part II — Software Architecture
+- Part III — API Design
+- Part IV — Code Organization
+- Part V — Testing Strategy
+- Part VI — Engineering Process
+- Part VII — Git and Delivery
+- Part VIII — Documentation
+- Part IX — Observability
+- Part X — Concurrency and Parallelism
+- Part XI — Security
+- Part XII — Performance
+- Appendices
 
 Each chapter must fit into a coherent long-term structure. Chapters are not standalone essays — they are components of a unified handbook with consistent terminology, tone, and decision frameworks.
 
