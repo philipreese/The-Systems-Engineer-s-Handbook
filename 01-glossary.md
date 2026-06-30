@@ -32,6 +32,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **future-proofing**: Speculative anticipation of unknown future requirements through upfront generality, as distinct from designing for change along a known, specific axis of variation. Usually an anti-pattern — the complexity cost is paid immediately for a benefit that may never arrive. First introduced in: [Part I, Ch 05](part1-systems-thinking/ch05-designing-for-change.md).
 
+**latency hierarchy**: The approximate cost, in time, of retrieving data from each layer of a real system — CPU cache, RAM, SSD, and network — spanning many orders of magnitude rather than a smooth gradient. Memorized by systems engineers as a baseline for reasoning about architectural cost. First introduced in: [Part I, Ch 06](part1-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md).
+
+**mechanical sympathy**: The principle, popularized by Martin Thompson, that software performs better when it respects how the underlying hardware actually executes instructions, moves data, and manages memory, rather than fighting those properties for the sake of abstract code cleanliness. First introduced in: [Part I, Ch 06](part1-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md).
+
+**MVCC (Multi-Version Concurrency Control)**: A concurrency strategy where every update creates a new version of a row rather than mutating it in place, allowing readers and writers to proceed without blocking each other at the cost of storage overhead and background cleanup (vacuuming). Contrasted with pessimistic locking. First introduced in: [Part I, Ch 06](part1-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md).
+
 **information hiding**: The deliberate concealment of a design decision that is likely to change, as distinct from merely hiding implementation. Coined by Parnas (1972). The goal is to isolate volatility behind a stable interface so that an internal change does not propagate to callers. Contrasted with encapsulation. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
 **instability metric**: I = Ce / (Ca + Ce). A value of 0 indicates a maximally stable component (depended on by many, depends on nothing); a value of 1 indicates a maximally unstable component (depends on many, depended on by nothing). First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
