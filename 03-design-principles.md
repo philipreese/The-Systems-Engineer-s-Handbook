@@ -6,13 +6,13 @@ These principles are not rules to follow blindly — they are the result of hard
 
 ---
 
-*Principles will be established as Part I (Systems Thinking) is completed. The principles emerge from the content, not the other way around.*
+*Confirmed from Part I (Systems Thinking). New principles are added only when a later part
+genuinely discovers one — not for every chapter's takeaway. The principles emerge from the
+content, not the other way around.*
 
 ---
 
-## Candidate Principles (to be confirmed or revised during Part I)
-
-The following are working hypotheses:
+## Principles (confirmed through Part II)
 
 1. **Complexity is the primary enemy.** Almost every engineering failure traces back to unmanaged complexity. Simpler systems fail less, are easier to debug, and survive longer.
 
@@ -25,3 +25,5 @@ The following are working hypotheses:
 5. **Local optimization can damage the global system.** A change that makes one component faster, cleaner, or simpler can make the whole system slower, messier, or more fragile.
 
 6. **Process only when it adds more than it costs.** Every process is overhead. Overhead is only justified when the benefit exceeds the cost — and that threshold is higher than most teams assume.
+
+7. **Dependencies must point from volatile toward stable, never the reverse.** *(Discovered in Part II — [Ch 12](part02-software-architecture/ch12-dependency-direction-inversion.md), [Ch 11](part02-software-architecture/ch11-layered-hexagonal-ports-adapters.md), [Ch 13](part02-software-architecture/ch13-coupling-cohesion-architecture-level.md), [Ch 17](part02-software-architecture/ch17-sync-vs-async-communication.md), [Ch 18](part02-software-architecture/ch18-data-ownership-boundaries.md).)* Every coupling decision — a layer, an owned interface, a bounded context, a synchronous call, a database boundary — either protects the stable side from the volatile side or fails to. The question to ask is never just "is this coupled," but "which way does the coupling point, and does that match what's actually likely to change."

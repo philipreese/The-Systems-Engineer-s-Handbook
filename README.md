@@ -29,15 +29,15 @@ Raw drafts are preserved so the editorial reasoning can be traced and revisited.
 |--------|---------|
 | `raw/chatgpt/` | Raw ChatGPT drafts, one file per chapter |
 | `raw/gemini/` | Raw Gemini drafts, one file per chapter |
-| `part1-systems-thinking/` | Final synthesized chapters |
-| `part2-software-architecture/` | Final synthesized chapters |
-| `part3-api-design/` | … |
-| `part4-code-organization/` | … |
-| `part5-testing-strategy/` | … |
-| `part6-engineering-process/` | … |
-| `part7-git-and-delivery/` | … |
-| `part8-documentation/` | … |
-| `part9-observability/` | … |
+| `part01-systems-thinking/` | Final synthesized chapters |
+| `part02-software-architecture/` | Final synthesized chapters |
+| `part03-api-design/` | … |
+| `part04-code-organization/` | … |
+| `part05-testing-strategy/` | … |
+| `part06-engineering-process/` | … |
+| `part07-git-and-delivery/` | … |
+| `part08-documentation/` | … |
+| `part09-observability/` | … |
 | `part10-concurrency/` | … |
 | `part11-security/` | … |
 | `part12-performance/` | … |

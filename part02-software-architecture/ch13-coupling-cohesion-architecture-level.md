@@ -1,6 +1,6 @@
 # Chapter 13 — Coupling and Cohesion at the Architecture Level
 
-**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part1-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 07 — Reliability as a Design Principle](../part1-systems-thinking/ch07-reliability-as-a-design-principle.md), [Part II, Ch 10 — Monolith vs. Service Decomposition](ch10-monolith-vs-service-decomposition.md), [Ch 12 — Dependency Direction and Inversion](ch12-dependency-direction-inversion.md). Specifically: afferent/efferent coupling, connascence, partial failure, and the distributed monolith anti-pattern.
+**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part01-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 07 — Reliability as a Design Principle](../part01-systems-thinking/ch07-reliability-as-a-design-principle.md), [Part II, Ch 10 — Monolith vs. Service Decomposition](ch10-monolith-vs-service-decomposition.md), [Ch 12 — Dependency Direction and Inversion](ch12-dependency-direction-inversion.md). Specifically: afferent/efferent coupling, connascence, partial failure, and the distributed monolith anti-pattern.
 
 **New vocabulary introduced:** bounded context, temporal coupling
 
@@ -57,7 +57,7 @@
 - *Strict ownership:* a hard prerequisite the moment a service is extracted as an independently deployed unit.
 
 **Common failure modes:**
-- This is exactly how a [distributed monolith](../part1-systems-thinking/ch03-coupling-and-cohesion.md) forms at the data layer: an organization splits a monolith into a dozen services but leaves the original database intact underneath all of them, paying the full latency and operational tax of distribution while keeping every bit of the monolith's deployment coupling.
+- This is exactly how a [distributed monolith](../part01-systems-thinking/ch03-coupling-and-cohesion.md) forms at the data layer: an organization splits a monolith into a dozen services but leaves the original database intact underneath all of them, paying the full latency and operational tax of distribution while keeping every bit of the monolith's deployment coupling.
 - **Read-your-neighbor's-table:** a service bypasses another service's API entirely because the data is "right there" in the shared schema, reintroducing coupling the API boundary was supposed to prevent.
 
 **Example:** Checkout and Inventory both running `UPDATE` statements against the same `products` table will eventually corrupt each other's assumptions about what that table means. A correctly cohesive boundary instead forces Checkout to call Inventory's API to reserve stock — the schema stays entirely behind Inventory's interface, which is information hiding (Ch 04) applied at the network level. **[Strong Recommendation: database-per-service is a hard prerequisite for extraction, not an optional hardening step]**
@@ -68,7 +68,7 @@
 
 **What it is:** Services communicating by publishing and consuming events through a broker, rather than calling each other synchronously — replacing a direct call with an announcement that something happened.
 
-**Why it exists:** A synchronous call creates **temporal coupling**: caller and callee must both be up, healthy, and reachable at the same instant — the architectural expression of the connascence of execution order described in [Ch 03](../part1-systems-thinking/ch03-coupling-and-cohesion.md). If a service blocks on a downstream call, that downstream service's availability becomes the caller's availability too. Publishing an event instead lets the publisher finish its work and respond to its own caller without waiting for every interested party to react.
+**Why it exists:** A synchronous call creates **temporal coupling**: caller and callee must both be up, healthy, and reachable at the same instant — the architectural expression of the connascence of execution order described in [Ch 03](../part01-systems-thinking/ch03-coupling-and-cohesion.md). If a service blocks on a downstream call, that downstream service's availability becomes the caller's availability too. Publishing an event instead lets the publisher finish its work and respond to its own caller without waiting for every interested party to react.
 
 **Options:**
 1. **Synchronous request/response** — services call each other directly and block for the result

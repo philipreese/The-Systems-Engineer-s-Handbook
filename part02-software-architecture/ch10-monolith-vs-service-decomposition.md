@@ -1,6 +1,6 @@
 # Chapter 10 — Monolith vs. Service Decomposition
 
-**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part1-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 06 — Cost Models and Mechanical Sympathy](../part1-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md), [Ch 07 — Reliability as a Design Principle](../part1-systems-thinking/ch07-reliability-as-a-design-principle.md), [Ch 08 — Local vs. Global Optimization](../part1-systems-thinking/ch08-local-vs-global-optimization.md). Specifically: the latency hierarchy, partial failure, the distributed monolith anti-pattern, and Conway's Law.
+**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part01-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 06 — Cost Models and Mechanical Sympathy](../part01-systems-thinking/ch06-cost-models-and-mechanical-sympathy.md), [Ch 07 — Reliability as a Design Principle](../part01-systems-thinking/ch07-reliability-as-a-design-principle.md), [Ch 08 — Local vs. Global Optimization](../part01-systems-thinking/ch08-local-vs-global-optimization.md). Specifically: the latency hierarchy, partial failure, the distributed monolith anti-pattern, and Conway's Law.
 
 **New vocabulary introduced:** modular monolith, big ball of mud, strangler fig pattern
 

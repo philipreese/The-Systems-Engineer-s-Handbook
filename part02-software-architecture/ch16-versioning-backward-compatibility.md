@@ -1,6 +1,6 @@
 # Chapter 16 — Versioning and Backward Compatibility
 
-**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part1-systems-thinking/ch03-coupling-and-cohesion.md), [Part II, Ch 15 — API Surface Design: What to Expose, What to Hide](ch15-api-surface-design-expose-hide.md). Specifically: afferent coupling and the minimal-surface-area principle.
+**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part01-systems-thinking/ch03-coupling-and-cohesion.md), [Part II, Ch 15 — API Surface Design: What to Expose, What to Hide](ch15-api-surface-design-expose-hide.md). Specifically: afferent coupling and the minimal-surface-area principle.
 
 **New vocabulary introduced:** sunset pattern
 

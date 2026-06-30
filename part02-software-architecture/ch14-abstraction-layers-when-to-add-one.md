@@ -1,6 +1,6 @@
 # Chapter 14 — Abstraction Layers: When to Add One
 
-**Prerequisites:** [Part I, Ch 04 — Abstraction and Information Hiding](../part1-systems-thinking/ch04-abstraction-and-information-hiding.md), [Part II, Ch 11 — Layered, Hexagonal, and Ports-and-Adapters Architecture](ch11-layered-hexagonal-ports-adapters.md), [Ch 12 — Dependency Direction and Inversion](ch12-dependency-direction-inversion.md), [Ch 13 — Coupling and Cohesion at the Architecture Level](ch13-coupling-cohesion-architecture-level.md). Specifically: information hiding versus encapsulation, afferent coupling, and the wrong-abstraction failure mode.
+**Prerequisites:** [Part I, Ch 04 — Abstraction and Information Hiding](../part01-systems-thinking/ch04-abstraction-and-information-hiding.md), [Part II, Ch 11 — Layered, Hexagonal, and Ports-and-Adapters Architecture](ch11-layered-hexagonal-ports-adapters.md), [Ch 12 — Dependency Direction and Inversion](ch12-dependency-direction-inversion.md), [Ch 13 — Coupling and Cohesion at the Architecture Level](ch13-coupling-cohesion-architecture-level.md). Specifically: information hiding versus encapsulation, afferent coupling, and the wrong-abstraction failure mode.
 
 **New vocabulary introduced:** anti-corruption layer (ACL), pass-through layer
 

@@ -1,6 +1,6 @@
 # Chapter 17 — Synchronous vs. Asynchronous Communication
 
-**Prerequisites:** [Part I, Ch 07 — Reliability as a Design Principle](../part1-systems-thinking/ch07-reliability-as-a-design-principle.md), [Ch 08 — Local vs. Global Optimization](../part1-systems-thinking/ch08-local-vs-global-optimization.md), [Part II, Ch 13 — Coupling and Cohesion at the Architecture Level](ch13-coupling-cohesion-architecture-level.md). Specifically: partial failure, Little's Law, and temporal coupling.
+**Prerequisites:** [Part I, Ch 07 — Reliability as a Design Principle](../part01-systems-thinking/ch07-reliability-as-a-design-principle.md), [Ch 08 — Local vs. Global Optimization](../part01-systems-thinking/ch08-local-vs-global-optimization.md), [Part II, Ch 13 — Coupling and Cohesion at the Architecture Level](ch13-coupling-cohesion-architecture-level.md). Specifically: partial failure, Little's Law, and temporal coupling.
 
 **New vocabulary introduced:** saga pattern, compensating action
 

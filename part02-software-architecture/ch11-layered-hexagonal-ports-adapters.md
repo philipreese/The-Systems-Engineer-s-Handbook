@@ -1,6 +1,6 @@
 # Chapter 11 — Layered, Hexagonal, and Ports-and-Adapters Architecture
 
-**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part1-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 04 — Abstraction and Information Hiding](../part1-systems-thinking/ch04-abstraction-and-information-hiding.md), [Part II, Ch 10 — Monolith vs. Service Decomposition](ch10-monolith-vs-service-decomposition.md). Specifically: afferent/efferent coupling, the distinction between encapsulation and information hiding, and connascence.
+**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part01-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 04 — Abstraction and Information Hiding](../part01-systems-thinking/ch04-abstraction-and-information-hiding.md), [Part II, Ch 10 — Monolith vs. Service Decomposition](ch10-monolith-vs-service-decomposition.md). Specifically: afferent/efferent coupling, the distinction between encapsulation and information hiding, and connascence.
 
 **New vocabulary introduced:** hexagonal architecture (ports-and-adapters), layer leakage, Data Transfer Object (DTO)
 

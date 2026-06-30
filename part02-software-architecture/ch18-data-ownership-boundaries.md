@@ -1,6 +1,6 @@
 # Chapter 18 — Data Ownership Boundaries
 
-**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part1-systems-thinking/ch03-coupling-and-cohesion.md), [Part II, Ch 10 — Monolith vs. Service Decomposition](ch10-monolith-vs-service-decomposition.md), [Ch 13 — Coupling and Cohesion at the Architecture Level](ch13-coupling-cohesion-architecture-level.md), [Ch 17 — Synchronous vs. Asynchronous Communication](ch17-sync-vs-async-communication.md). Specifically: connascence of schema and value, the distributed monolith anti-pattern, and temporal coupling.
+**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part01-systems-thinking/ch03-coupling-and-cohesion.md), [Part II, Ch 10 — Monolith vs. Service Decomposition](ch10-monolith-vs-service-decomposition.md), [Ch 13 — Coupling and Cohesion at the Architecture Level](ch13-coupling-cohesion-architecture-level.md), [Ch 17 — Synchronous vs. Asynchronous Communication](ch17-sync-vs-async-communication.md). Specifically: connascence of schema and value, the distributed monolith anti-pattern, and temporal coupling.
 
 **New vocabulary introduced:** database-per-service pattern, CQRS (Command Query Responsibility Segregation)
 

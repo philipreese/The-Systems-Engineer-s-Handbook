@@ -35,7 +35,7 @@ exactly. That file covers:
 
 When generating chapter specifications or prompts, refer to:
 - `prompts/chapter-generation.md` — the universal draft generation prompt
-- `prompts/part1-chapter-specs.md` — pre-filled special instructions for Part I chapters
+- `prompts/part01-chapter-specs.md` — pre-filled special instructions for Part I chapters
 
 ---
 

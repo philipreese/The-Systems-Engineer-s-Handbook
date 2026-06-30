@@ -1,6 +1,6 @@
 # Chapter 15 — API Surface Design: What to Expose, What to Hide
 
-**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part1-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 04 — Abstraction and Information Hiding](../part1-systems-thinking/ch04-abstraction-and-information-hiding.md), [Part II, Ch 13 — Coupling and Cohesion at the Architecture Level](ch13-coupling-cohesion-architecture-level.md), [Ch 14 — Abstraction Layers: When to Add One](ch14-abstraction-layers-when-to-add-one.md). Specifically: information hiding, afferent coupling, and connascence of value.
+**Prerequisites:** [Part I, Ch 03 — Coupling and Cohesion](../part01-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 04 — Abstraction and Information Hiding](../part01-systems-thinking/ch04-abstraction-and-information-hiding.md), [Part II, Ch 13 — Coupling and Cohesion at the Architecture Level](ch13-coupling-cohesion-architecture-level.md), [Ch 14 — Abstraction Layers: When to Add One](ch14-abstraction-layers-when-to-add-one.md). Specifically: information hiding, afferent coupling, and connascence of value.
 
 **New vocabulary introduced:** progressive disclosure
 

@@ -22,8 +22,9 @@ Read these files before synthesizing any chapter:
 2. `01-glossary.md` — terms already defined; do not redefine them
 3. `02-table-of-contents.md` — confirm which chapter number this is and its position
 4. `03-design-principles.md` — core axioms this handbook does not contradict. The principles emerge from the content, not the other way around.
-5. `prompts/part03-chapter-specs.md` (or the relevant part's spec file) — the "Do NOT cover"
-   list is the most important thing you will read. It tells you what to cut from both drafts.
+5. `prompts/partNN-chapter-specs.md` for the part you are synthesizing (e.g.
+   `prompts/part02-chapter-specs.md` for Part II) — the "Do NOT cover" list is the most
+   important thing you will read. It tells you what to cut from both drafts.
 
 ---
 
@@ -100,8 +101,8 @@ Read both drafts completely before writing anything. As you read, note:
 Location: `part[N]-[part-slug]/ch[NN]-[chapter-slug].md`
 
 Examples:
-- `part1-systems-thinking/ch02-complexity-is-the-enemy.md`
-- `part2-software-architecture/ch10-monolith-vs-service-decomposition.md`
+- `part01-systems-thinking/ch02-complexity-is-the-enemy.md`
+- `part02-software-architecture/ch10-monolith-vs-service-decomposition.md`
 
 Use lowercase kebab-case for the filename. Match the slug to the chapter title.
 

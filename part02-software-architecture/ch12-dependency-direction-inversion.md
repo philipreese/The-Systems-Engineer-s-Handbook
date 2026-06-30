@@ -1,6 +1,6 @@
 # Chapter 12 — Dependency Direction and Inversion
 
-**Prerequisites:** [Part I, Ch 02 — Complexity Is the Enemy](../part1-systems-thinking/ch02-complexity-is-the-enemy.md), [Ch 03 — Coupling and Cohesion](../part1-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 04 — Abstraction and Information Hiding](../part1-systems-thinking/ch04-abstraction-and-information-hiding.md), [Part II, Ch 11 — Layered, Hexagonal, and Ports-and-Adapters Architecture](ch11-layered-hexagonal-ports-adapters.md). Specifically: afferent/efferent coupling, essential vs. accidental complexity, and the ports/adapters vocabulary.
+**Prerequisites:** [Part I, Ch 02 — Complexity Is the Enemy](../part01-systems-thinking/ch02-complexity-is-the-enemy.md), [Ch 03 — Coupling and Cohesion](../part01-systems-thinking/ch03-coupling-and-cohesion.md), [Ch 04 — Abstraction and Information Hiding](../part01-systems-thinking/ch04-abstraction-and-information-hiding.md), [Part II, Ch 11 — Layered, Hexagonal, and Ports-and-Adapters Architecture](ch11-layered-hexagonal-ports-adapters.md). Specifically: afferent/efferent coupling, essential vs. accidental complexity, and the ports/adapters vocabulary.
 
 **New vocabulary introduced:** Dependency Inversion Principle (DIP), repository pattern
 
