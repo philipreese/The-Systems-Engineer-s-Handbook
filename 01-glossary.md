@@ -28,6 +28,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **cohesion**: The degree to which the elements inside a single component belong together and serve a single well-defined purpose. High cohesion reduces internal complexity. First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
 
+**confused deputy problem**: A failure mode where a service uses its own elevated, perimeter-trusted privileges to act on a caller's behalf without verifying that the caller was actually authorized to request that action — the service isn't compromised, it's tricked into misusing its own authority. First introduced in: [Part III, Ch 24](part03-api-design/ch24-authentication-authorization-boundaries.md).
+
 **connascence**: A taxonomy for evaluating the strength of coupling between two components. Two components are connascent if a change in one requires a change in the other. Forms range from weak (name, type) to strong (execution order, timing). First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
 
 **coupling**: The degree to which one component's behavior depends on another component's state, structure, or timing. First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
@@ -93,6 +95,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **Theory of Constraints**: Goldratt's principle that system throughput is bounded by the single slowest component (the bottleneck). Optimizing any non-bottleneck component has no effect on system throughput and often increases load on the actual bottleneck. First introduced in: [Part I, Ch 08](part01-systems-thinking/ch08-local-vs-global-optimization.md).
 
 **Write-Ahead Log (WAL)**: A durability mechanism where a database appends transaction intent to a sequential log before updating data files, enabling durability guarantees without paying the latency cost of random I/O on every commit. On crash, the log is replayed to recover committed transactions. First introduced in: [Part I, Ch 07](part01-systems-thinking/ch07-reliability-as-a-design-principle.md).
+
+**zero-trust architecture**: A security model that re-verifies identity and authorization at every service boundary instead of trusting requests based on network location alone. The structural response to the confused deputy problem — no internal call is trusted just because it originated inside the perimeter. First introduced in: [Part III, Ch 24](part03-api-design/ch24-authentication-authorization-boundaries.md).
 
 **wrong abstraction**: An abstraction built on an incorrect guess about what will change, which couples every caller to a false model of the problem. Worse than no abstraction at all, because unwinding the coupling costs more than the duplication it was meant to prevent. First introduced in: [Part I, Ch 04](part01-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
