@@ -148,6 +148,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **temporal coupling**: The requirement that a caller and a callee both be available, healthy, and reachable at the same instant for an interaction to succeed — the defining property of synchronous communication, and the architectural expression of connascence of execution order. First introduced in: [Part II, Ch 13](part02-software-architecture/ch13-coupling-cohesion-architecture-level.md).
 
+**god package**: A package named `common/`, `shared/`, `helpers/`, or `utils/` that accumulates code whose only relationship is that it lacked an obvious owner. Characterized by near-zero internal cohesion and high afferent coupling — everything imports it, nothing owns it. The canonical organizational failure mode of a codebase that abandoned domain-based package ownership in favor of convenience. First introduced in: [Part IV, Ch 27](part04-code-organization/ch27-file-and-module-structure.md).
+
+**package-by-feature**: An organizational strategy in which directories are named after business capabilities (e.g., `orders/`, `billing/`), each containing all the code — controller, service, repository — required to serve that domain concept. Maximizes domain cohesion and change locality. The consensus default for application code. Contrasted with package-by-layer. First introduced in: [Part IV, Ch 27](part04-code-organization/ch27-file-and-module-structure.md).
+
+**package-by-layer**: An organizational strategy in which directories are named after technical roles (e.g., `controllers/`, `services/`, `repositories/`), grouping all code of a given technical type together regardless of the business domain it serves. Maximizes technical cohesion at the cost of domain cohesion; appropriate for framework and platform code where the technical role is itself the primary domain. Contrasted with package-by-feature. First introduced in: [Part IV, Ch 27](part04-code-organization/ch27-file-and-module-structure.md).
+
 ---
 
 ## Format

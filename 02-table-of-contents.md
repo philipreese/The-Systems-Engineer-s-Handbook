@@ -63,7 +63,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 27 | File and Module Structure | [Stub] |
+| Ch 27 | File and Module Structure | [Complete] |
 | Ch 28 | Naming Conventions and When They Matter | [Stub] |
 | Ch 29 | When to Split Files vs. Keep Together | [Stub] |
 | Ch 30 | Comments: What to Comment, What Not To | [Stub] |
