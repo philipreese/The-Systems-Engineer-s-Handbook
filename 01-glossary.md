@@ -22,6 +22,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **Cynefin framework**: A sense-making model (Snowden) that classifies problems by the relationship between cause and effect: Simple (best practice applies), Complicated (analysis required, right answer exists), Complex (probe-sense-respond, no single right answer), Chaotic (act first to restore order). Most architectural decisions are complicated. First introduced in: [Part I, Ch 09](part01-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
 
+**cursor (keyset pagination)**: A stable, unique, sortable pointer to a specific position in a collection, used to anchor a pagination request ("items after this one") instead of a relative offset counted from the start. Lets the database jump directly to the position via an index, giving constant performance regardless of depth and immunity to page drift. First introduced in: [Part III, Ch 23](part03-api-design/ch23-pagination-and-streaming.md).
+
 **cyclomatic complexity**: A quantitative measure of the number of independent execution paths through a program, derived from the control flow graph. Higher values indicate harder-to-test and harder-to-reason-about code. First introduced in: [Part I, Ch 02](part01-systems-thinking/ch02-complexity-is-the-enemy.md).
 
 **cohesion**: The degree to which the elements inside a single component belong together and serve a single well-defined purpose. High cohesion reduces internal complexity. First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
@@ -79,6 +81,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **optimization target**: An objective a system is designed to optimize — latency, throughput, reliability, cost of change, etc. Targets may be explicit (documented) or implicit (inferred). First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 
 **partial failure**: The condition in distributed systems where some components succeed and others fail simultaneously, producing a state that is neither success nor failure globally. The normal operational mode of distributed systems, not an edge case. First introduced in: [Part I, Ch 07](part01-systems-thinking/ch07-reliability-as-a-design-principle.md). An objective a system is designed to optimize — latency, throughput, reliability, cost of change, etc. Targets may be explicit (documented) or implicit (inferred). First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
+
+**page drift**: The instability that offset-based pagination suffers under concurrent writes — an insert or delete shifts which items fall on which page between requests, causing a client to silently see duplicates or skip items entirely. First introduced in: [Part III, Ch 23](part03-api-design/ch23-pagination-and-streaming.md).
 
 **optimization target drift**: The phenomenon where a system's actual optimization targets diverge from its intended ones over time due to accumulated changes, hotfixes, and operational adjustments. First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 
