@@ -6,11 +6,15 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 ---
 
-**accidental complexity**: Complexity introduced by the engineering solution rather than the problem domain itself. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md) (expanded); referenced in [Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
+**accidental complexity**: Complexity introduced by the engineering solution rather than the problem domain itself. Can be reduced by changing the solution. Contrasted with essential complexity. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
+
+**cyclomatic complexity**: A quantitative measure of the number of independent execution paths through a program, derived from the control flow graph. Higher values indicate harder-to-test and harder-to-reason-about code. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
 
 **cost of change**: How expensive it is to modify a system over time, measured in engineering time, risk, and coordination overhead. Distinct from cost of execution. First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
 
-**essential complexity**: Complexity inherent to the problem domain that cannot be eliminated by any engineering choice. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md) (expanded); referenced in [Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
+**essential complexity**: Complexity inherent to the problem domain that cannot be eliminated without changing what the system does. Contrasted with accidental complexity. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
+
+**state space explosion**: The condition where mutable state variables combine to produce a number of possible system configurations that exceeds what engineers can anticipate or test. A primary failure mode of unconstrained mutable state. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
 
 **MTBF (Mean Time Between Failures)**: A reliability paradigm that optimizes for preventing failures from occurring. Contrasted with MTTR. First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
 
