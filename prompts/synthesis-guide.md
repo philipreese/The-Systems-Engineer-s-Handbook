@@ -21,7 +21,8 @@ Read these files before synthesizing any chapter:
 1. `00-style-guide.md` — the chapter template, recommendation labels, and writing rules
 2. `01-glossary.md` — terms already defined; do not redefine them
 3. `02-table-of-contents.md` — confirm which chapter number this is and its position
-4. `prompts/part2-chapter-specs.md` (or the relevant part's spec file) — the "Do NOT cover"
+4. `03-design-principles.md` — core axioms this handbook does not contradict. The principles emerge from the content, not the other way around.
+5. `prompts/part03-chapter-specs.md` (or the relevant part's spec file) — the "Do NOT cover"
    list is the most important thing you will read. It tells you what to cut from both drafts.
 
 ---
@@ -125,6 +126,11 @@ First introduced in: [Part I, Ch NN](path/to/chapter.md).
 
 Only add terms that are genuinely new and cross-chapter. Do not add terms that are
 self-explanatory or only used within this chapter.
+
+### 5. Update the Design Principles
+
+Only add new design principles that were genuinely discovered during the creation of the chapters. 
+Ensure you follow the guidelines at the top of `03-design-principles.md`.
 
 ---
 
