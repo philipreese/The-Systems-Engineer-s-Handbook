@@ -1,0 +1,31 @@
+# Part VII — Git and Delivery
+
+Version control strategy and the delivery pipeline: branching, commit discipline, CI/CD design, and release mechanics.
+
+---
+
+## Chapters
+
+| Chapter | Title | Status |
+|---------|-------|--------|
+| Ch 50 | Branching Strategies | [Stub] |
+| Ch 51 | Commit Message Conventions | [Stub] |
+| Ch 52 | Squash vs. Preserve History | [Stub] |
+| Ch 53 | Branch Naming and Lifecycle | [Stub] |
+| Ch 54 | Force Push: When It's Acceptable | [Stub] |
+| Ch 55 | Merge vs. Rebase | [Stub] |
+| Ch 56 | Tagging and Release Markers | [Stub] |
+| Ch 57 | What Belongs in CI (and What Doesn't) | [Stub] |
+| Ch 58 | Fail-Fast vs. Fail-Safe Pipeline Design | [Stub] |
+| Ch 59 | Caching Strategy in CI | [Stub] |
+| Ch 60 | Matrix Builds | [Stub] |
+| Ch 61 | Release Automation | [Stub] |
+| Ch 62 | Environment Promotion | [Stub] |
+| Ch 63 | Toolchain and Dependency Management | [Stub] |
+
+---
+
+## Prerequisites
+
+Part I — Systems Thinking
+Part VI — Engineering Process

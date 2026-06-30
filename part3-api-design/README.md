@@ -1,0 +1,25 @@
+# Part III — API Design
+
+How to design interfaces — the contracts between systems and between teams. Covers protocol choice, resource modeling, error handling, and the differences between internal and external API design.
+
+---
+
+## Chapters
+
+| Chapter | Title | Status |
+|---------|-------|--------|
+| Ch 19 | REST vs. RPC vs. Event-Driven | [Stub] |
+| Ch 20 | Resource Modeling | [Stub] |
+| Ch 21 | Error Handling Contracts | [Stub] |
+| Ch 22 | Idempotency | [Stub] |
+| Ch 23 | Pagination and Streaming | [Stub] |
+| Ch 24 | Authentication and Authorization Boundaries | [Stub] |
+| Ch 25 | Internal vs. External API Design | [Stub] |
+| Ch 26 | FFI and Native Binding Design | [Stub] |
+
+---
+
+## Prerequisites
+
+Part I — Systems Thinking
+Part II — Software Architecture (Ch 15: API Surface Design)
