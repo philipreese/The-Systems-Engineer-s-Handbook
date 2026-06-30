@@ -8,7 +8,7 @@ How to design interfaces — the contracts between systems and between teams. Co
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 19 | REST vs. RPC vs. Event-Driven | [Stub] |
+| Ch 19 | REST vs. RPC vs. Event-Driven | [Complete] |
 | Ch 20 | Resource Modeling | [Stub] |
 | Ch 21 | Error Handling Contracts | [Stub] |
 | Ch 22 | Idempotency | [Stub] |

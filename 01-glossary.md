@@ -102,6 +102,10 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **Dependency Inversion Principle (DIP)**: High-level (stable) modules must not depend on low-level (volatile) modules; both should depend on an abstraction, and that abstraction must be owned by the high-level side. First introduced in: [Part II, Ch 12](part02-software-architecture/ch12-dependency-direction-inversion.md).
 
+**event-carried state transfer**: An event payload design where the message carries the full state of the resource at the moment of the event ("a fat event"), rather than only an identifier — letting consumers act without calling back to the publisher, at the cost of risking eventual-consistency collapse if delivery lags behind newer mutations. First introduced in: [Part III, Ch 19](part03-api-design/ch19-rest-vs-rpc-vs-event-driven.md).
+
+**HATEOAS (Hypermedia As The Engine Of Application State)**: REST's textbook ideal in which server responses embed the links describing every action currently available, so a client never needs prior knowledge of the API's URL structure. Almost never implemented in production — the coordination and tooling cost rarely outweighs disciplined, documented, pragmatic REST. First introduced in: [Part III, Ch 19](part03-api-design/ch19-rest-vs-rpc-vs-event-driven.md).
+
 **hexagonal architecture (ports-and-adapters)**: An internal architecture, introduced by Alistair Cockburn, in which business logic sits at the center and defines the interfaces ("ports") it needs; infrastructure connects to the core by implementing those interfaces ("adapters"), so dependencies always point inward. First introduced in: [Part II, Ch 11](part02-software-architecture/ch11-layered-hexagonal-ports-adapters.md).
 
 **layer leakage**: The failure mode where infrastructure or implementation details surface above the layer meant to hide them — for example, a SQL exception reaching the API layer — defeating the information hiding the layering was supposed to provide. First introduced in: [Part II, Ch 11](part02-software-architecture/ch11-layered-hexagonal-ports-adapters.md).
