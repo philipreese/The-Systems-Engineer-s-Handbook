@@ -12,7 +12,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 |---------|-------|--------|
 | Ch 01 | What Engineering Actually Optimizes | [Complete] |
 | Ch 02 | Complexity Is the Enemy | [Complete] |
-| Ch 03 | Coupling and Cohesion | [Stub] |
+| Ch 03 | Coupling and Cohesion | [Complete] |
 | Ch 04 | Abstraction and Information Hiding | [Stub] |
 | Ch 05 | Designing for Change | [Stub] |
 | Ch 06 | Cost Models and Mechanical Sympathy | [Stub] |
