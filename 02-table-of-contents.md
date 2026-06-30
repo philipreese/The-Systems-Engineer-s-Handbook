@@ -49,7 +49,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Ch 19 | REST vs. RPC vs. Event-Driven | [Complete] |
 | Ch 20 | Resource Modeling | [Complete] |
 | Ch 21 | Error Handling Contracts | [Complete] |
-| Ch 22 | Idempotency | [Stub] |
+| Ch 22 | Idempotency | [Complete] |
 | Ch 23 | Pagination and Streaming | [Stub] |
 | Ch 24 | Authentication and Authorization Boundaries | [Stub] |
 | Ch 25 | Internal vs. External API Design | [Stub] |
