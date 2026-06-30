@@ -67,7 +67,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Ch 28 | Naming Conventions and When They Matter | [Complete] |
 | Ch 29 | When to Split Files vs. Keep Together | [Complete] |
 | Ch 30 | Comments: What to Comment, What Not To | [Complete] |
-| Ch 31 | When Abstractions Help vs. When They Obscure | [Stub] |
+| Ch 31 | When Abstractions Help vs. When They Obscure | [Complete] |
 | Ch 32 | Error Handling: Typed Errors vs. Exceptions vs. Result Types | [Stub] |
 | Ch 33 | When to Write Unsafe or Low-Level Code | [Stub] |
 
