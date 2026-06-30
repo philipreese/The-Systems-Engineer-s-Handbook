@@ -166,6 +166,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **package-by-layer**: An organizational strategy in which directories are named after technical roles (e.g., `controllers/`, `services/`, `repositories/`), grouping all code of a given technical type together regardless of the business domain it serves. Maximizes technical cohesion at the cost of domain cohesion; appropriate for framework and platform code where the technical role is itself the primary domain. Contrasted with package-by-feature. First introduced in: [Part IV, Ch 27](part04-code-organization/ch27-file-and-module-structure.md).
 
+**error-as-value**: A design pattern in which a function's possible failure is represented as an ordinary return value tracked by the type system, rather than a thrown exception. The function signature explicitly declares that failure is possible; callers must handle or forward the failure through standard control flow. Exemplified by Go's `(result, error)` return convention and Rust's `Result<T, E>`. First introduced in: [Part IV, Ch 32](part04-code-organization/ch32-error-handling-typed-errors-vs-exceptions-vs-result-types.md).
+
+**invisible control flow**: The side-channel execution path created by unchecked exceptions, where control jumps directly from a deeply nested call to an upstream catch block, bypassing the intervening function signatures without any visible indication at the call site. A caller reading a function invocation has no way to know the function might exit multiple frames up the stack without inspecting all transitive dependencies. The dominant cost of unchecked exception paradigms. First introduced in: [Part IV, Ch 32](part04-code-organization/ch32-error-handling-typed-errors-vs-exceptions-vs-result-types.md).
+
+**operational failure**: An expected, predictable anomaly that can occur during correct execution — a file not found, a network timeout, a validation error on user-supplied input. The immediate caller is realistically expected to handle it through normal control flow. Contrasted with exceptional failure. First introduced in: [Part IV, Ch 32](part04-code-organization/ch32-error-handling-typed-errors-vs-exceptions-vs-result-types.md).
+
+**exceptional failure**: An unrecoverable violation of an invariant indicating a programming bug or environmental collapse — an array access out of bounds, a null dereference in code that asserted non-null, out-of-memory. Attempting to recover and continue from an exceptional failure risks operating in an undefined state. The correct response is fail-fast termination via a panic or exception. Contrasted with operational failure. First introduced in: [Part IV, Ch 32](part04-code-organization/ch32-error-handling-typed-errors-vs-exceptions-vs-result-types.md).
+
 ---
 
 ## Format
