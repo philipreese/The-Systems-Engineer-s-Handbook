@@ -34,6 +34,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **Conway's Law**: Organizations that design systems are constrained to produce designs that mirror their own communication structures. Local team autonomy produces systems with those team boundaries baked in — which may not be the correct system boundaries. First introduced in: [Part I, Ch 08](part01-systems-thinking/ch08-local-vs-global-optimization.md).
 
+**correlation ID**: A unique identifier included in an error response (and propagated through internal logs and traces) that lets a caller hand a single failure back to the provider and have it matched to the exact request that produced it. First introduced in: [Part III, Ch 21](part03-api-design/ch21-error-handling-contracts.md).
+
 **cost of change**: How expensive it is to modify a system over time, measured in engineering time, risk, and coordination overhead. Distinct from cost of execution. First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 
 **distributed monolith**: A system decomposed into multiple services that remain tightly coupled through a shared database schema, undocumented contracts, or implicit timing dependencies. Has the operational complexity of microservices with the coupling of a monolith. First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
