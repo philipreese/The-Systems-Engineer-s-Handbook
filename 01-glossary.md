@@ -8,6 +8,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **afferent coupling (Ca)**: The number of external components that depend on a given component. High afferent coupling means changes to this component have wide impact. Contrasted with efferent coupling. First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
 
+**axis of variation**: A specific, named dimension along which a system is expected to change — an authentication method, a storage backend, a data format. Identifying real axes of variation is what distinguishes designing for change from future-proofing. First introduced in: [Part I, Ch 05](part1-systems-thinking/ch05-designing-for-change.md).
+
 **accidental complexity**: Complexity introduced by the engineering solution rather than the problem domain itself. Can be reduced by changing the solution. Contrasted with essential complexity. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
 
 **cyclomatic complexity**: A quantitative measure of the number of independent execution paths through a program, derived from the control flow graph. Higher values indicate harder-to-test and harder-to-reason-about code. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
@@ -28,6 +30,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **essential complexity**: Complexity inherent to the problem domain that cannot be eliminated without changing what the system does. Contrasted with accidental complexity. First introduced in: [Part I, Ch 02](part1-systems-thinking/ch02-complexity-is-the-enemy.md).
 
+**future-proofing**: Speculative anticipation of unknown future requirements through upfront generality, as distinct from designing for change along a known, specific axis of variation. Usually an anti-pattern — the complexity cost is paid immediately for a benefit that may never arrive. First introduced in: [Part I, Ch 05](part1-systems-thinking/ch05-designing-for-change.md).
+
 **information hiding**: The deliberate concealment of a design decision that is likely to change, as distinct from merely hiding implementation. Coined by Parnas (1972). The goal is to isolate volatility behind a stable interface so that an internal change does not propagate to callers. Contrasted with encapsulation. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
 **instability metric**: I = Ce / (Ca + Ce). A value of 0 indicates a maximally stable component (depended on by many, depends on nothing); a value of 1 indicates a maximally unstable component (depends on many, depended on by nothing). First introduced in: [Part I, Ch 03](part1-systems-thinking/ch03-coupling-and-cohesion.md).
@@ -47,6 +51,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 **optimization target**: An objective a system is designed to optimize — latency, throughput, reliability, cost of change, etc. Targets may be explicit (documented) or implicit (inferred). First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
 
 **optimization target drift**: The phenomenon where a system's actual optimization targets diverge from its intended ones over time due to accumulated changes, hotfixes, and operational adjustments. First introduced in: [Part I, Ch 01](part1-systems-thinking/ch01-what-engineering-optimizes.md).
+
+**Open/Closed Principle (OCP)**: Software entities should be open for extension but closed for modification — new behavior is added through new code rather than by editing existing, tested code. A pragmatic lens for managing regression risk where change is genuinely additive, not a mandate to apply everywhere. First introduced in: [Part I, Ch 05](part1-systems-thinking/ch05-designing-for-change.md).
 
 **wrong abstraction**: An abstraction built on an incorrect guess about what will change, which couples every caller to a false model of the problem. Worse than no abstraction at all, because unwinding the coupling costs more than the duplication it was meant to prevent. First introduced in: [Part I, Ch 04](part1-systems-thinking/ch04-abstraction-and-information-hiding.md).
 
