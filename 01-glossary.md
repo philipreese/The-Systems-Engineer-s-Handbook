@@ -190,6 +190,24 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **testability diagnostic**: The direct correlation between a module's difficulty to unit-test and its internal design quality. Code that requires constructing infrastructure, many mocked dependencies, or significant application context just to assert a single behavior is revealing coupling problems — the test difficulty is a signal about the design, not about the test. First introduced in: [Part V, Ch 35](part05-testing-strategy/ch35-what-belongs-at-each-layer.md).
 
+**test double**: The umbrella term, coined by Gerard Meszaros, for any synthetic substitute injected into a system under test in place of a real production collaborator. Encompasses dummies, stubs, spies, mocks, and fakes — each with distinct semantics. Using "mock" as a catch-all for all five categories causes communication failures and poor test design. First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
+
+**dummy**: A test double passed to satisfy a method signature or parameter list but never actually invoked during the test. Carries no logic and holds no state. First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
+
+**stub**: A test double that returns predetermined responses to specific calls, providing data the code under test requires. A stub carries no interaction tracking and makes no assertions about whether or how it was called. Contrasted with mocks (which assert on call patterns) and fakes (which contain real logic). First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
+
+**spy**: A test double that records its own interaction history — how many times a method was invoked, with what arguments — for inspection after execution completes. Distinguished from a mock in that a spy does not declare expectations before the test runs; it records for later assertion. First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
+
+**mock**: A test double pre-programmed with behavioral expectations before a test runs. If the code under test fails to call the expected methods in the expected order with the expected arguments, the mock fails the test immediately. Mocks verify interactions (how collaborators were called) rather than state (what the system produced). The most commonly misapplied term in the test double taxonomy. First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
+
+**fake**: A test double that contains a genuine, working implementation backed by a mechanism unsuitable for production — an in-memory repository, a local SMTP server, an embedded message queue. Unlike stubs and mocks, fakes perform real computation and implement the same contract as the production dependency; they simply substitute a lightweight backing store. First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
+
+**refactoring fragility**: The condition where a test suite breaks during valid internal restructuring — splitting a method, merging two helpers, reorganizing collaborators — despite the system's external behavioral contract remaining unchanged. The primary cost of interaction-based testing (mocks) at scale: the suite becomes a rigid transcript of the code's current structure, penalizing the refactoring it was meant to enable. First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
+
+**state verification**: A testing approach that asserts correctness by inspecting the final output, return value, or persisted state of a system after an operation completes — independent of how the system produced that state internally. Contrasted with interaction verification. First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
+
+**interaction verification**: A testing approach that asserts correctness by confirming how a module invoked its collaborators — which methods were called, with what arguments, and in what order — rather than what the module ultimately produced. Appropriate for outbound side effects with no inspectable return value; prone to refactoring fragility when applied to computation logic. Contrasted with state verification. First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
+
 ---
 
 ## Format
