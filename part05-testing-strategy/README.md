@@ -15,7 +15,7 @@ When to test, what to test, how to structure tests, and what testing cannot tell
 | Ch 38 | Property-Based Testing | [Complete] |
 | Ch 39 | When Not to Test | [Complete] |
 | Ch 40 | Test Naming and Structure | [Complete] |
-| Ch 41 | Coverage: What It Measures and What It Doesn't | [Stub] |
+| Ch 41 | Coverage: What It Measures and What It Doesn't | [Complete] |
 
 ---
 

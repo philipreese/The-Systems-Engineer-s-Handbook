@@ -234,6 +234,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **table-driven test**: A test pattern in which many input/output examples of the same behavior are expressed as entries in a data table, iterated by a single test function with one shared execution path, rather than as separate hand-written functions per example. The idiomatic Go convention (paired with `t.Run` for per-case isolation) and a deliberate, named exception to the one-behavior-per-test principle — each table entry is still one behavior, expressed repeatedly. First introduced in: [Part V, Ch 40](part05-testing-strategy/ch40-test-naming-and-structure.md).
 
+**line coverage**: The weakest tier of the coverage measurement hierarchy: whether a given line of source code was executed at least once by any test. Vulnerable to compound conditionals that report full coverage from a single test satisfying only one clause, leaving the remaining logical outcomes unexercised. First introduced in: [Part V, Ch 41](part05-testing-strategy/ch41-coverage-what-it-measures-and-what-it-doesnt.md).
+
+**branch coverage**: A stronger tier of the coverage measurement hierarchy than line coverage: whether every independent outcome of a conditional — both the true and false path of an `if`, every case of a `switch` — was executed at least once. Catches unexercised decision outcomes that line coverage cannot see, but still cannot confirm that the executed code's output was actually checked by an assertion. First introduced in: [Part V, Ch 41](part05-testing-strategy/ch41-coverage-what-it-measures-and-what-it-doesnt.md).
+
+**mutation testing**: The strongest tier of the coverage measurement hierarchy: deliberately injecting small behavioral defects into production code (flipping an operator, inverting a conditional, altering a return value) and re-running the test suite to see whether any test fails. A mutation that survives — the suite still passes despite the injected defect — reveals that the corresponding code path is executed but not meaningfully verified. Computationally expensive enough to be suited to periodic auditing of critical modules rather than continuous CI enforcement. Implemented by tools such as PIT (Java) and mutmut (Python). First introduced in: [Part V, Ch 41](part05-testing-strategy/ch41-coverage-what-it-measures-and-what-it-doesnt.md).
+
+**execution-verification gap**: The structural blind spot in every coverage metric: code can be fully executed by a test run while the test asserts nothing about the result, so the code registers as "covered" without its behavior ever being checked. The reason high coverage percentages are not evidence of test quality — coverage tooling measures execution, not verification, and has no way to distinguish the two. First introduced in: [Part V, Ch 41](part05-testing-strategy/ch41-coverage-what-it-measures-and-what-it-doesnt.md).
+
 ---
 
 ## Format
