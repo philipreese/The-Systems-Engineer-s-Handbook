@@ -83,7 +83,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Ch 35 | What Belongs at Each Layer | [Complete] |
 | Ch 36 | When to Mock vs. Use Real Dependencies | [Complete] |
 | Ch 37 | Fixture-Based Testing | [Complete] |
-| Ch 38 | Property-Based Testing | [Stub] |
+| Ch 38 | Property-Based Testing | [Complete] |
 | Ch 39 | When Not to Test | [Stub] |
 | Ch 40 | Test Naming and Structure | [Stub] |
 | Ch 41 | Coverage: What It Measures and What It Doesn't | [Stub] |

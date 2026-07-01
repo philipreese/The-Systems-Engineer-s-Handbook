@@ -214,6 +214,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **fixture bloat**: The progressive accumulation of records in a shared fixture dataset, driven by engineers incrementally adding rows to cover specific edge cases, until the dataset is too large and interdependent for any single engineer to understand in full. Any change to the fixture risks breaking unrelated tests through associations no one has mapped. The structural failure mode of static shared fixtures at scale. First introduced in: [Part V, Ch 37](part05-testing-strategy/ch37-fixture-based-testing.md).
 
+**property-based testing**: A testing technique that specifies a universal statement (a behavioral invariant) that must hold for all valid inputs and delegates input selection to a framework, which generates inputs automatically and searches for counterexamples. Contrasted with example-based testing, which verifies specific input-output pairs. Supplements rather than replaces example-based tests: examples document expected behavior; properties explore the input space examples cannot cover. First introduced in: [Part V, Ch 38](part05-testing-strategy/ch38-property-based-testing.md).
+
+**behavioral invariant**: A property or constraint that must remain true for every valid input to a component — independent of any specific input value. The subject of a property-based test. Examples: `decode(encode(x)) == x` for all byte sequences; a sort output always contains exactly the same elements as its input. Contrasted with an example assertion, which verifies one specific case. First introduced in: [Part V, Ch 38](part05-testing-strategy/ch38-property-based-testing.md).
+
+**shrinking**: The process by which a property-based testing framework automatically reduces a discovered failing input to the smallest input that still fails the property. Converts a large, noisy random counterexample into a minimal, diagnosable failure. The mechanism that makes property-based testing practical at the unit test layer. First formalized in QuickCheck (Haskell, 1999). First introduced in: [Part V, Ch 38](part05-testing-strategy/ch38-property-based-testing.md).
+
+**round-trip invariance**: The behavioral invariant that composing a transformation with its inverse reconstructs the original input: `decode(encode(x)) == x`, `deserialize(serialize(x)) == x`. The most common and highest-return property-based test pattern, applicable to every serializer, codec, compressor, and protocol adapter. First introduced in: [Part V, Ch 38](part05-testing-strategy/ch38-property-based-testing.md).
+
 ---
 
 ## Format
