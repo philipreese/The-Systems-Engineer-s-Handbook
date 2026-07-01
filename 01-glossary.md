@@ -186,6 +186,10 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **feedback loop latency**: The elapsed time between a code change and a trusted signal from the test runner that the change is correct or broken. Short feedback loop latency enables frequent verification; long feedback loop latency causes developers to skip local testing, accumulate defects across commits, and spend more time diagnosing failures that could have been caught immediately. First introduced in: [Part V, Ch 34](part05-testing-strategy/ch34-the-testing-pyramid.md).
 
+**architectural seam**: A design boundary — most frequently an abstract interface or port — that separates components tested at different layers of the testing pyramid. Unit tests stop at the architectural seam; integration tests verify the seam itself. In hexagonal architecture, ports are the seams: domain logic lives inside them and is unit-tested; adapters implement them and are integration-tested against real infrastructure. First introduced in: [Part V, Ch 35](part05-testing-strategy/ch35-what-belongs-at-each-layer.md).
+
+**testability diagnostic**: The direct correlation between a module's difficulty to unit-test and its internal design quality. Code that requires constructing infrastructure, many mocked dependencies, or significant application context just to assert a single behavior is revealing coupling problems — the test difficulty is a signal about the design, not about the test. First introduced in: [Part V, Ch 35](part05-testing-strategy/ch35-what-belongs-at-each-layer.md).
+
 ---
 
 ## Format

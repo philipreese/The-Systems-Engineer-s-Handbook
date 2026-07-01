@@ -9,7 +9,7 @@ When to test, what to test, how to structure tests, and what testing cannot tell
 | Chapter | Title | Status |
 |---------|-------|--------|
 | Ch 34 | The Testing Pyramid | [Complete] |
-| Ch 35 | What Belongs at Each Layer | [Stub] |
+| Ch 35 | What Belongs at Each Layer | [Complete] |
 | Ch 36 | When to Mock vs. Use Real Dependencies | [Stub] |
 | Ch 37 | Fixture-Based Testing | [Stub] |
 | Ch 38 | Property-Based Testing | [Stub] |
