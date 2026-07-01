@@ -15,7 +15,7 @@ How engineering teams coordinate work: issue tracking, planning, code review, te
 | Ch 46 | Spec-First Development | [Complete] |
 | Ch 47 | Code Review | [Complete] |
 | Ch 48 | Technical Debt | [Complete] |
-| Ch 49 | Process Overhead: The Value Threshold | [Stub] |
+| Ch 49 | Process Overhead: The Value Threshold | [Complete] |
 
 ---
 
