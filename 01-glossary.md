@@ -288,6 +288,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **execution-verification gap**: The structural blind spot in every coverage metric: code can be fully executed by a test run while the test asserts nothing about the result, so the code registers as "covered" without its behavior ever being checked. The reason high coverage percentages are not evidence of test quality — coverage tooling measures execution, not verification, and has no way to distinguish the two. First introduced in: [Part V, Ch 41](part05-testing-strategy/ch41-coverage-what-it-measures-and-what-it-doesnt.md).
 
+**branch topology**: The structural choice of how many long-lived branches a repository maintains and how work flows between them before reaching production — the fundamental Git-mechanics decision every other version-control and delivery practice builds on. First introduced in: [Part VII, Ch 50](part07-git-and-delivery/ch50-branching-strategies.md).
+
+**trunk-based development (TBD)**: A branching topology in which all work integrates frequently, via short-lived branches measured in hours or a few days, into a single long-lived branch (`main` or trunk) kept perpetually releasable. Shifts blast-radius containment from branch isolation onto runtime guardrails such as feature flags. First introduced in: [Part VII, Ch 50](part07-git-and-delivery/ch50-branching-strategies.md).
+
+**GitFlow**: A branching topology, formalized by Vincent Driessen in 2010, using a hierarchy of long-lived branches (`main`, `develop`, `release/*`, `hotfix/*`) to isolate work until a scheduled stabilization phase. Contrasted with trunk-based development; appropriate when release cadence is genuinely decoupled from continuous deployment. First introduced in: [Part VII, Ch 50](part07-git-and-delivery/ch50-branching-strategies.md).
+
 ---
 
 ## Format
