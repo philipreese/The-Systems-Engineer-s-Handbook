@@ -228,6 +228,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **negative ROI test**: A test whose ongoing maintenance cost — the time spent understanding, debugging, and updating it — exceeds the confidence it provides about the system's correctness. Identified by asking whether the test catches realistic regressions, survives reasonable refactoring, and would be missed if removed; a "no" to all three marks a candidate for deletion. First introduced in: [Part V, Ch 39](part05-testing-strategy/ch39-when-not-to-test.md).
 
+**behavioral specification naming**: The convention of naming a test after the observable behavior it verifies and the condition that triggers it (`returns_null_when_user_id_does_not_exist`) rather than after the method or class it exercises (`testGetUser`). Survives refactoring that leaves behavior unchanged and turns a failing test's name into an immediate diagnosis rather than a prompt to open the source file. First introduced in: [Part V, Ch 40](part05-testing-strategy/ch40-test-naming-and-structure.md).
+
+**Arrange/Act/Assert**: The canonical internal structure for a test body — construct the required preconditions (Arrange), execute the operation under test (Act), verify the observable outcome (Assert) — with each section visually distinct. Coined by Bill Wake (2001). Equivalent in structure to the Given/When/Then vocabulary used by behavior-driven frameworks. First introduced in: [Part V, Ch 40](part05-testing-strategy/ch40-test-naming-and-structure.md).
+
+**table-driven test**: A test pattern in which many input/output examples of the same behavior are expressed as entries in a data table, iterated by a single test function with one shared execution path, rather than as separate hand-written functions per example. The idiomatic Go convention (paired with `t.Run` for per-case isolation) and a deliberate, named exception to the one-behavior-per-test principle — each table entry is still one behavior, expressed repeatedly. First introduced in: [Part V, Ch 40](part05-testing-strategy/ch40-test-naming-and-structure.md).
+
 ---
 
 ## Format
