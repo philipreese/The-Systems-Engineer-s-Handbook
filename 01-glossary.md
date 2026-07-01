@@ -222,6 +222,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **round-trip invariance**: The behavioral invariant that composing a transformation with its inverse reconstructs the original input: `decode(encode(x)) == x`, `deserialize(serialize(x)) == x`. The most common and highest-return property-based test pattern, applicable to every serializer, codec, compressor, and protocol adapter. First introduced in: [Part V, Ch 38](part05-testing-strategy/ch38-property-based-testing.md).
 
+**trust boundary**: The line in an application's architecture separating custom business logic from frameworks, ORMs, language runtimes, and third-party libraries that vendors already test extensively. Application tests should stop at this boundary — verifying your own logic, not re-testing the framework's documented behavior — because duplicating vendor test coverage yields no marginal confidence while imposing a permanent maintenance cost. First introduced in: [Part V, Ch 39](part05-testing-strategy/ch39-when-not-to-test.md).
+
+**implementation coupling**: The condition where a test's assertions depend on a component's private methods, internal call sequences, or intermediate state rather than its externally observable behavior, causing the test to fail whenever the internals are restructured even though the component's contract with its callers is unchanged. The primary cause of tests that penalize refactoring instead of enabling it. First introduced in: [Part V, Ch 39](part05-testing-strategy/ch39-when-not-to-test.md).
+
+**negative ROI test**: A test whose ongoing maintenance cost — the time spent understanding, debugging, and updating it — exceeds the confidence it provides about the system's correctness. Identified by asking whether the test catches realistic regressions, survives reasonable refactoring, and would be missed if removed; a "no" to all three marks a candidate for deletion. First introduced in: [Part V, Ch 39](part05-testing-strategy/ch39-when-not-to-test.md).
+
 ---
 
 ## Format
