@@ -10,6 +10,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **Architecture Decision Record (ADR)**: A lightweight document stored in the repository that records what was decided, the context and constraints present at decision time, and what alternatives were rejected and why. The mechanism by which a decision's reasoning outlives the people who made it. First introduced in: [Part I, Ch 09](part01-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
 
+**ADR graveyard**: The failure mode where ADRs are written to satisfy a process checkpoint and then never consulted again — most often because they are stored somewhere outside the normal review workflow, such as an external wiki, so nothing forces an engineer to encounter them during actual development. First introduced in: [Part VI, Ch 45](part06-engineering-process/ch45-architecture-decision-records.md).
+
+**retroactive ADR theater**: The practice of writing an ADR after a decision's consequences are already known — typically following an incident or post-mortem — and recording a sanitized, idealized version of the reasoning rather than the actual, flawed assumptions present at the time. Documents the outcome while laundering the reasoning, defeating the record's purpose of preserving what was genuinely believed at decision time. First introduced in: [Part VI, Ch 45](part06-engineering-process/ch45-architecture-decision-records.md).
+
+**ADR inflation**: The failure mode where the threshold for writing an ADR is lowered until routine, cheap-to-reverse, local decisions receive the same permanent-record treatment as genuinely architectural ones. The resulting volume drowns the signal of the decisions that actually matter, and engineers stop consulting the collection altogether. First introduced in: [Part VI, Ch 45](part06-engineering-process/ch45-architecture-decision-records.md).
+
 **afferent coupling (Ca)**: The number of external components that depend on a given component. High afferent coupling means changes to this component have wide impact. Contrasted with efferent coupling. First introduced in: [Part I, Ch 03](part01-systems-thinking/ch03-coupling-and-cohesion.md).
 
 **axis of variation**: A specific, named dimension along which a system is expected to change — an authentication method, a storage backend, a data format. Identifying real axes of variation is what distinguishes designing for change from future-proofing. First introduced in: [Part I, Ch 05](part01-systems-thinking/ch05-designing-for-change.md).
