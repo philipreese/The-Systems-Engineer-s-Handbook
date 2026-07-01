@@ -118,7 +118,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Ch 52 | Squash vs. Preserve History | [Complete] |
 | Ch 53 | Branch Naming and Lifecycle | [Complete] |
 | Ch 54 | Force Push: When It's Acceptable | [Complete] |
-| Ch 55 | Merge vs. Rebase | [Stub] |
+| Ch 55 | Merge vs. Rebase | [Complete] |
 | Ch 56 | Tagging and Release Markers | [Stub] |
 | Ch 57 | What Belongs in CI (and What Doesn't) | [Stub] |
 | Ch 58 | Fail-Fast vs. Fail-Safe Pipeline Design | [Stub] |
