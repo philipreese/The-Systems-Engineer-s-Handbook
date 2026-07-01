@@ -174,6 +174,10 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **exceptional failure**: An unrecoverable violation of an invariant indicating a programming bug or environmental collapse — an array access out of bounds, a null dereference in code that asserted non-null, out-of-memory. Attempting to recover and continue from an exceptional failure risks operating in an undefined state. The correct response is fail-fast termination via a panic or exception. Contrasted with operational failure. First introduced in: [Part IV, Ch 32](part04-code-organization/ch32-error-handling-typed-errors-vs-exceptions-vs-result-types.md).
 
+**undefined behavior**: The condition produced by a low-level operation whose result is not defined by the language specification — typically, accessing memory outside its valid bounds, dereferencing a freed or invalid pointer, or violating aliasing rules. Unlike safe-language errors that produce predictable panics or exceptions, undefined behavior can produce silent data corruption, incorrect values written to unrelated memory, security exploits, or crashes that appear far from the original fault under specific conditions. The primary risk that safety escape hatches introduce. First introduced in: [Part IV, Ch 33](part04-code-organization/ch33-when-to-write-unsafe-or-low-level-code.md).
+
+**safety escape hatch**: A language-level mechanism that suspends some or all of a language's automatic safety verification for a narrowly scoped region of code, shifting the responsibility for correctness from the compiler to the engineer. Examples include Rust's `unsafe` block, C#'s `unsafe` context, and Python C extension modules. Distinguished from languages like C and C++ where no escape hatch is needed because unsafe operations are the default. First introduced in: [Part IV, Ch 33](part04-code-organization/ch33-when-to-write-unsafe-or-low-level-code.md).
+
 ---
 
 ## Format
