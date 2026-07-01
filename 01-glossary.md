@@ -294,6 +294,10 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **GitFlow**: A branching topology, formalized by Vincent Driessen in 2010, using a hierarchy of long-lived branches (`main`, `develop`, `release/*`, `hotfix/*`) to isolate work until a scheduled stabilization phase. Contrasted with trunk-based development; appropriate when release cadence is genuinely decoupled from continuous deployment. First introduced in: [Part VII, Ch 50](part07-git-and-delivery/ch50-branching-strategies.md).
 
+**annotated tag**: A full Git object marking a commit as a release point, carrying a tagger identity, timestamp, message, and optionally a GPG signature. The correct default for any tag representing a release, as distinct from a lightweight tag. First introduced in: [Part VII, Ch 56](part07-git-and-delivery/ch56-tagging-and-release-markers.md).
+
+**lightweight tag**: A bare, named pointer to a commit SHA with no accompanying metadata — mechanically, a branch reference that never moves. Appropriate only for local, throwaway bookmarks, never a production release marker. Contrasted with annotated tag. First introduced in: [Part VII, Ch 56](part07-git-and-delivery/ch56-tagging-and-release-markers.md).
+
 ---
 
 ## Format
