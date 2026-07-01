@@ -298,6 +298,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **lightweight tag**: A bare, named pointer to a commit SHA with no accompanying metadata — mechanically, a branch reference that never moves. Appropriate only for local, throwaway bookmarks, never a production release marker. Contrasted with annotated tag. First introduced in: [Part VII, Ch 56](part07-git-and-delivery/ch56-tagging-and-release-markers.md).
 
+**stale-cache masking**: The failure mode where a cached build or dependency artifact is valid under its own cache key's rules but no longer matches what a clean build from scratch would produce, causing a pipeline to pass for the wrong reason. The reason a scheduled, cache-bypassing clean build is a necessary backstop rather than an optional debugging step. First introduced in: [Part VII, Ch 59](part07-git-and-delivery/ch59-caching-strategy-in-ci.md).
+
 ---
 
 ## Format
