@@ -12,7 +12,7 @@ How engineering teams coordinate work: issue tracking, planning, code review, te
 | Ch 43 | Issue as Tracking Unit vs. PR as Review Unit | [Complete] |
 | Ch 44 | Milestone and Phase Planning | [Complete] |
 | Ch 45 | Architecture Decision Records (ADRs) | [Complete] |
-| Ch 46 | Spec-First Development | [Stub] |
+| Ch 46 | Spec-First Development | [Complete] |
 | Ch 47 | Code Review | [Stub] |
 | Ch 48 | Technical Debt | [Stub] |
 | Ch 49 | Process Overhead: The Value Threshold | [Stub] |
