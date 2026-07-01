@@ -9,7 +9,7 @@ Version control strategy and the delivery pipeline: branching, commit discipline
 | Chapter | Title | Status |
 |---------|-------|--------|
 | Ch 50 | Branching Strategies | [Complete] |
-| Ch 51 | Commit Message Conventions | [Stub] |
+| Ch 51 | Commit Message Conventions | [Complete] |
 | Ch 52 | Squash vs. Preserve History | [Stub] |
 | Ch 53 | Branch Naming and Lifecycle | [Stub] |
 | Ch 54 | Force Push: When It's Acceptable | [Stub] |
