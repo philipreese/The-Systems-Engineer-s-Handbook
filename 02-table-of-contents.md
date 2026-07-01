@@ -79,7 +79,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 34 | The Testing Pyramid | [Stub] |
+| Ch 34 | The Testing Pyramid | [Complete] |
 | Ch 35 | What Belongs at Each Layer | [Stub] |
 | Ch 36 | When to Mock vs. Use Real Dependencies | [Stub] |
 | Ch 37 | Fixture-Based Testing | [Stub] |

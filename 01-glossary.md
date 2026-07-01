@@ -178,6 +178,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **safety escape hatch**: A language-level mechanism that suspends some or all of a language's automatic safety verification for a narrowly scoped region of code, shifting the responsibility for correctness from the compiler to the engineer. Examples include Rust's `unsafe` block, C#'s `unsafe` context, and Python C extension modules. Distinguished from languages like C and C++ where no escape hatch is needed because unsafe operations are the default. First introduced in: [Part IV, Ch 33](part04-code-organization/ch33-when-to-write-unsafe-or-low-level-code.md).
 
+**testing pyramid**: The structural model for distributing automated tests across three layers — unit tests (many, fast, isolated), integration tests (fewer, slower, cross-boundary), and end-to-end tests (fewest, slowest, full-stack) — shaped so that the cheapest tests are the most numerous and the most expensive are the fewest. Encodes the economic principle that confidence becomes more expensive as test scope increases. First introduced in: [Part V, Ch 34](part05-testing-strategy/ch34-the-testing-pyramid.md).
+
+**ice cream cone anti-pattern**: The inverted testing pyramid — a suite with many slow end-to-end tests, a thin integration layer, and few or no unit tests. The predictable result of testing a codebase whose internal components cannot be isolated because architectural boundaries were not enforced. Produces suites too slow to run locally, too brittle to trust, and too coarse to diagnose failures precisely. First introduced in: [Part V, Ch 34](part05-testing-strategy/ch34-the-testing-pyramid.md).
+
+**localization precision**: The ability of a failing test to identify the specific file, module, or code path containing the defect, without requiring log tracing or debugger attachment. Highest in unit tests (failure points directly at the isolated unit); lowest in end-to-end tests (failure indicates something is broken somewhere in the full stack). Decreases as test scope increases. First introduced in: [Part V, Ch 34](part05-testing-strategy/ch34-the-testing-pyramid.md).
+
+**feedback loop latency**: The elapsed time between a code change and a trusted signal from the test runner that the change is correct or broken. Short feedback loop latency enables frequent verification; long feedback loop latency causes developers to skip local testing, accumulate defects across commits, and spend more time diagnosing failures that could have been caught immediately. First introduced in: [Part V, Ch 34](part05-testing-strategy/ch34-the-testing-pyramid.md).
+
 ---
 
 ## Format
