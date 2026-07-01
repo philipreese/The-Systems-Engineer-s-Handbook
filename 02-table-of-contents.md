@@ -101,7 +101,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Ch 44 | Milestone and Phase Planning | [Complete] |
 | Ch 45 | Architecture Decision Records (ADRs) | [Complete] |
 | Ch 46 | Spec-First Development | [Complete] |
-| Ch 47 | Code Review | [Stub] |
+| Ch 47 | Code Review | [Complete] |
 | Ch 48 | Technical Debt | [Stub] |
 | Ch 49 | Process Overhead: The Value Threshold | [Stub] |
 
