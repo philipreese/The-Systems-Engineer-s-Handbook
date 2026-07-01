@@ -208,6 +208,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **interaction verification**: A testing approach that asserts correctness by confirming how a module invoked its collaborators — which methods were called, with what arguments, and in what order — rather than what the module ultimately produced. Appropriate for outbound side effects with no inspectable return value; prone to refactoring fragility when applied to computation logic. Contrasted with state verification. First introduced in: [Part V, Ch 36](part05-testing-strategy/ch36-when-to-mock-vs-use-real-dependencies.md).
 
+**fixture**: The complete set of preconditions a test requires: database records, in-memory objects, configuration values, and any environmental state the system under test depends on. Distinct from test doubles, which replace dependencies; fixtures provide the state those dependencies contain. First introduced in: [Part V, Ch 37](part05-testing-strategy/ch37-fixture-based-testing.md).
+
+**state contamination**: The condition where a test modifies a shared resource — a database table, a global variable, an in-memory cache — and fails to clean it up, leaving the execution environment in a state that corrupts subsequent tests. The root cause of tests that pass in isolation but fail when run as part of a suite. First introduced in: [Part V, Ch 37](part05-testing-strategy/ch37-fixture-based-testing.md).
+
+**fixture bloat**: The progressive accumulation of records in a shared fixture dataset, driven by engineers incrementally adding rows to cover specific edge cases, until the dataset is too large and interdependent for any single engineer to understand in full. Any change to the fixture risks breaking unrelated tests through associations no one has mapped. The structural failure mode of static shared fixtures at scale. First introduced in: [Part V, Ch 37](part05-testing-strategy/ch37-fixture-based-testing.md).
+
 ---
 
 ## Format
