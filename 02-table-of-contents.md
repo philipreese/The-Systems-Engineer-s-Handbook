@@ -98,7 +98,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 |---------|-------|--------|
 | Ch 42 | Issue Tracking: What Makes a Good Issue | [Complete] |
 | Ch 43 | Issue as Tracking Unit vs. PR as Review Unit | [Complete] |
-| Ch 44 | Milestone and Phase Planning | [Stub] |
+| Ch 44 | Milestone and Phase Planning | [Complete] |
 | Ch 45 | Architecture Decision Records (ADRs) | [Stub] |
 | Ch 46 | Spec-First Development | [Stub] |
 | Ch 47 | Code Review | [Stub] |
