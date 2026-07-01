@@ -8,7 +8,7 @@ How engineering teams coordinate work: issue tracking, planning, code review, te
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 42 | Issue Tracking: What Makes a Good Issue | [Stub] |
+| Ch 42 | Issue Tracking: What Makes a Good Issue | [Complete] |
 | Ch 43 | Issue as Tracking Unit vs. PR as Review Unit | [Stub] |
 | Ch 44 | Milestone and Phase Planning | [Stub] |
 | Ch 45 | Architecture Decision Records (ADRs) | [Stub] |
