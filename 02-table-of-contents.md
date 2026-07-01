@@ -116,7 +116,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Ch 50 | Branching Strategies | [Complete] |
 | Ch 51 | Commit Message Conventions | [Complete] |
 | Ch 52 | Squash vs. Preserve History | [Complete] |
-| Ch 53 | Branch Naming and Lifecycle | [Stub] |
+| Ch 53 | Branch Naming and Lifecycle | [Complete] |
 | Ch 54 | Force Push: When It's Acceptable | [Stub] |
 | Ch 55 | Merge vs. Rebase | [Stub] |
 | Ch 56 | Tagging and Release Markers | [Stub] |
