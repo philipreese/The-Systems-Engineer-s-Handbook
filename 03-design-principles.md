@@ -12,7 +12,7 @@ content, not the other way around.*
 
 ---
 
-## Principles (confirmed through Part VII)
+## Principles (confirmed through Part VIII)
 
 1. **Complexity is the primary enemy.** Almost every engineering failure traces back to unmanaged complexity. Simpler systems fail less, are easier to debug, and survive longer.
 

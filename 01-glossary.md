@@ -304,6 +304,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **dependency debt**: The accumulated gap between a project's pinned dependency and toolchain versions and the versions currently maintained upstream, caused by deferring routine updates. A direct instance of the technical debt model (Ch 48): every postponed update increases what eventually has to be absorbed at once, paid down continuously in small increments or all at once in a large, high-risk migration. First introduced in: [Part VII, Ch 63](part07-git-and-delivery/ch63-toolchain-and-dependency-management.md).
 
+**documentation tax**: The ongoing cost of a piece of external documentation — being located, read, trusted, and eventually corrected by someone who did not write it — as distinct from the one-time cost of writing it. Paid indefinitely once a page exists, whether or not the page turns out to have been worth writing. First introduced in: [Part VIII, Ch 64](part08-documentation/ch64-what-to-document-vs-what-to-leave-to-the-code.md).
+
+**living document**: A documentation artifact expected to always describe the system as it currently exists — a README, a generated API reference — as distinct from a point-in-time record like a spec or ADR, which is allowed to diverge from present reality without being wrong. A living document that goes stale is a failure the artifact was supposed to prevent; a stale point-in-time record is functioning as designed. First introduced in: [Part VIII, Ch 65](part08-documentation/ch65-readme-vs-spec-vs-adr-vs-inline-comment.md).
+
+**executable documentation**: Documentation content that is mechanically verified by the build itself — a code sample that is actually compiled and executed, a link that is checked, a schema validated against the real API it documents — converting a specific class of drift into a build failure instead of a silent, undetected one. Covers only what's objectively checkable; explanatory accuracy remains a human audit responsibility. First introduced in: [Part VIII, Ch 66](part08-documentation/ch66-keeping-documentation-honest.md).
+
+**paper runbook**: A runbook that has been written but never actually executed against a real or simulated failure, so its correctness is an unverified assumption rather than a demonstrated fact. Carries the same false-confidence risk as an untested code path (Ch 41's execution-verification gap) — the document existing is not evidence it works, and the only reader positioned to discover it doesn't is someone already mid-incident. First introduced in: [Part VIII, Ch 68](part08-documentation/ch68-runbooks-and-operational-documentation.md).
+
 ---
 
 ## Format
