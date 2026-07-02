@@ -348,6 +348,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **optimistic concurrency control (OCC)**: A lock-avoiding coordination strategy where an operation executes speculatively against a local copy of shared data, then checks at commit time whether the underlying data changed underneath it, retrying the whole operation on conflict rather than blocking upfront. Delivers near-native throughput when conflicts are rare; degrades sharply into a retry storm when they are not. Contrasted with pessimistic locking. First introduced in: [Part X, Ch 75](part10-concurrency/ch75-locks-when-to-use-them.md).
 
+**concurrency**: The structural property of a program organized to make progress on more than one unit of work during overlapping periods of time. A property of code structure, not execution — it requires no particular hardware and can run on a single core. Contrasted with parallelism. First introduced in: [Part X, Ch 76](part10-concurrency/ch76-async-vs-threads-vs-processes.md).
+
+**parallelism**: The literal, simultaneous execution of more than one unit of work at the same physical instant, requiring multiple CPU cores or hardware execution units. A property of execution, not of code structure. Contrasted with concurrency. First introduced in: [Part X, Ch 76](part10-concurrency/ch76-async-vs-threads-vs-processes.md).
+
+**CPU-bound work**: Work whose completion time is limited by the processor's own computation rate rather than by waiting on an external resource. Adding concurrency without adding execution cores cannot make it faster, because the bottleneck is parallelism, not scheduling. Contrasted with I/O-bound work. First introduced in: [Part X, Ch 76](part10-concurrency/ch76-async-vs-threads-vs-processes.md).
+
+**I/O-bound work**: Work whose completion time is limited primarily by waiting on an external resource — network or disk — rather than by processor computation. Benefits from concurrency that overlaps multiple waits cheaply rather than from added CPU cores. Contrasted with CPU-bound work. First introduced in: [Part X, Ch 76](part10-concurrency/ch76-async-vs-threads-vs-processes.md).
+
 ---
 
 ## Format
