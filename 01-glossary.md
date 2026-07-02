@@ -320,6 +320,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **symptom-based alerting**: The practice of triggering a page from a user-visible degradation (elevated error rate, elevated latency) rather than from an internal condition that might, but frequently doesn't, ever reach a user. Contrasted with cause-based alerting, which fires on conditions — a CPU threshold, one unhealthy replica — that often self-correct through the same redundancy and autoscaling the system was built with, manufacturing noise without preventing user-visible harm. First introduced in: [Part IX, Ch 71](part09-observability/ch71-alerting-signal-vs-noise.md).
 
+**trace context**: The correlation ID (Ch 21) extended into a structured, explicitly propagated set of identifiers — trace ID, span ID, parent span ID — that captures causality between operations across service boundaries, not merely their relatedness. Every participating service must read it from an inbound request and forward it on every outbound call; one service that fails to do so orphans every span downstream of it. First introduced in: [Part IX, Ch 72](part09-observability/ch72-distributed-tracing.md).
+
 ---
 
 ## Format
