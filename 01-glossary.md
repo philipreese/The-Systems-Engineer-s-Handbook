@@ -288,6 +288,22 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **execution-verification gap**: The structural blind spot in every coverage metric: code can be fully executed by a test run while the test asserts nothing about the result, so the code registers as "covered" without its behavior ever being checked. The reason high coverage percentages are not evidence of test quality — coverage tooling measures execution, not verification, and has no way to distinguish the two. First introduced in: [Part V, Ch 41](part05-testing-strategy/ch41-coverage-what-it-measures-and-what-it-doesnt.md).
 
+**branch topology**: The structural choice of how many long-lived branches a repository maintains and how work flows between them before reaching production — the fundamental Git-mechanics decision every other version-control and delivery practice builds on. First introduced in: [Part VII, Ch 50](part07-git-and-delivery/ch50-branching-strategies.md).
+
+**trunk-based development (TBD)**: A branching topology in which all work integrates frequently, via short-lived branches measured in hours or a few days, into a single long-lived branch (`main` or trunk) kept perpetually releasable. Shifts blast-radius containment from branch isolation onto runtime guardrails such as feature flags. First introduced in: [Part VII, Ch 50](part07-git-and-delivery/ch50-branching-strategies.md).
+
+**GitFlow**: A branching topology, formalized by Vincent Driessen in 2010, using a hierarchy of long-lived branches (`main`, `develop`, `release/*`, `hotfix/*`) to isolate work until a scheduled stabilization phase. Contrasted with trunk-based development; appropriate when release cadence is genuinely decoupled from continuous deployment. First introduced in: [Part VII, Ch 50](part07-git-and-delivery/ch50-branching-strategies.md).
+
+**annotated tag**: A full Git object marking a commit as a release point, carrying a tagger identity, timestamp, message, and optionally a GPG signature. The correct default for any tag representing a release, as distinct from a lightweight tag. First introduced in: [Part VII, Ch 56](part07-git-and-delivery/ch56-tagging-and-release-markers.md).
+
+**lightweight tag**: A bare, named pointer to a commit SHA with no accompanying metadata — mechanically, a branch reference that never moves. Appropriate only for local, throwaway bookmarks, never a production release marker. Contrasted with annotated tag. First introduced in: [Part VII, Ch 56](part07-git-and-delivery/ch56-tagging-and-release-markers.md).
+
+**stale-cache masking**: The failure mode where a cached build or dependency artifact is valid under its own cache key's rules but no longer matches what a clean build from scratch would produce, causing a pipeline to pass for the wrong reason. The reason a scheduled, cache-bypassing clean build is a necessary backstop rather than an optional debugging step. First introduced in: [Part VII, Ch 59](part07-git-and-delivery/ch59-caching-strategy-in-ci.md).
+
+**build-once-promote-many**: The practice of compiling or packaging a single immutable artifact exactly once, then deploying that identical artifact, unchanged, through every subsequent environment rather than rebuilding from source at each stage. Guarantees that what was validated in an earlier environment is what actually runs in a later one. First introduced in: [Part VII, Ch 62](part07-git-and-delivery/ch62-environment-promotion.md).
+
+**dependency debt**: The accumulated gap between a project's pinned dependency and toolchain versions and the versions currently maintained upstream, caused by deferring routine updates. A direct instance of the technical debt model (Ch 48): every postponed update increases what eventually has to be absorbed at once, paid down continuously in small increments or all at once in a large, high-risk migration. First introduced in: [Part VII, Ch 63](part07-git-and-delivery/ch63-toolchain-and-dependency-management.md).
+
 ---
 
 ## Format
