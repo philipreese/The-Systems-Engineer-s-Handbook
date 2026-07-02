@@ -304,6 +304,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **dependency debt**: The accumulated gap between a project's pinned dependency and toolchain versions and the versions currently maintained upstream, caused by deferring routine updates. A direct instance of the technical debt model (Ch 48): every postponed update increases what eventually has to be absorbed at once, paid down continuously in small increments or all at once in a large, high-risk migration. First introduced in: [Part VII, Ch 63](part07-git-and-delivery/ch63-toolchain-and-dependency-management.md).
 
+**documentation tax**: The ongoing cost of a piece of external documentation — being located, read, trusted, and eventually corrected by someone who did not write it — as distinct from the one-time cost of writing it. Paid indefinitely once a page exists, whether or not the page turns out to have been worth writing. First introduced in: [Part VIII, Ch 64](part08-documentation/ch64-what-to-document-vs-what-to-leave-to-the-code.md).
+
 ---
 
 ## Format
