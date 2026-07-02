@@ -302,6 +302,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **build-once-promote-many**: The practice of compiling or packaging a single immutable artifact exactly once, then deploying that identical artifact, unchanged, through every subsequent environment rather than rebuilding from source at each stage. Guarantees that what was validated in an earlier environment is what actually runs in a later one. First introduced in: [Part VII, Ch 62](part07-git-and-delivery/ch62-environment-promotion.md).
 
+**dependency debt**: The accumulated gap between a project's pinned dependency and toolchain versions and the versions currently maintained upstream, caused by deferring routine updates. A direct instance of the technical debt model (Ch 48): every postponed update increases what eventually has to be absorbed at once, paid down continuously in small increments or all at once in a large, high-risk migration. First introduced in: [Part VII, Ch 63](part07-git-and-delivery/ch63-toolchain-and-dependency-management.md).
+
 ---
 
 ## Format

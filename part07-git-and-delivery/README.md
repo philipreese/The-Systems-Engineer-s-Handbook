@@ -21,7 +21,7 @@ Version control strategy and the delivery pipeline: branching, commit discipline
 | Ch 60 | Matrix Builds | [Complete] |
 | Ch 61 | Release Automation | [Complete] |
 | Ch 62 | Environment Promotion | [Complete] |
-| Ch 63 | Toolchain and Dependency Management | [Stub] |
+| Ch 63 | Toolchain and Dependency Management | [Complete] |
 
 ---
 

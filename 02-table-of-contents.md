@@ -126,7 +126,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Ch 60 | Matrix Builds | [Complete] |
 | Ch 61 | Release Automation | [Complete] |
 | Ch 62 | Environment Promotion | [Complete] |
-| Ch 63 | Toolchain and Dependency Management | [Stub] |
+| Ch 63 | Toolchain and Dependency Management | [Complete] |
 
 ---
 
