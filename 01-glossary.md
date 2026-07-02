@@ -322,6 +322,16 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **trace context**: The correlation ID (Ch 21) extended into a structured, explicitly propagated set of identifiers — trace ID, span ID, parent span ID — that captures causality between operations across service boundaries, not merely their relatedness. Every participating service must read it from an inbound request and forward it on every outbound call; one service that fails to do so orphans every span downstream of it. First introduced in: [Part IX, Ch 72](part09-observability/ch72-distributed-tracing.md).
 
+**Service Level Indicator (SLI)**: The specific, empirically measured value a reliability target is built on — a percentage of successful requests, a latency percentile. Distinct from the target set for it (SLO) and the external commitment built on top of that target (SLA). First introduced in: [Part IX, Ch 73](part09-observability/ch73-error-budgets-and-slos.md).
+
+**Service Level Objective (SLO)**: The internal target set for an SLI over a rolling window — the number engineering actually operates against. Deliberately tighter than any corresponding SLA, to preserve a margin for internal mitigation before an external commitment is at risk. First introduced in: [Part IX, Ch 73](part09-observability/ch73-error-budgets-and-slos.md).
+
+**Service Level Agreement (SLA)**: The external, often contractual commitment made to customers, set deliberately looser than the internal SLO it's built on so that a normal operational dip has room to be caught and fixed before it becomes a breach of contract. First introduced in: [Part IX, Ch 73](part09-observability/ch73-error-budgets-and-slos.md).
+
+**error budget**: The direct mathematical consequence of an SLO (1 − SLO): the explicit, spendable volume of allowed failure a service can consume within a tracking window. Intended to be spent deliberately on deploys, migrations, and experimentation rather than hoarded — a service that never spends its budget is under-using risk its own objective already permits. First introduced in: [Part IX, Ch 73](part09-observability/ch73-error-budgets-and-slos.md).
+
+**burn rate**: The ratio of a service's current error rate to the error rate that would exactly exhaust its error budget over the budget's full tracking window. Evaluated across multiple sliding windows at once to catch both a sudden, severe spike and a slow, persistent leak — either of which a single static threshold alert misses in one direction or the other. First introduced in: [Part IX, Ch 73](part09-observability/ch73-error-budgets-and-slos.md).
+
 ---
 
 ## Format
