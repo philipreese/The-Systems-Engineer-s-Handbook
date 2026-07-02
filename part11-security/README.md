@@ -8,7 +8,7 @@ Threat modeling, defense in depth, input validation, authentication, secrets, an
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 79 | Threat Modeling | [Stub] |
+| Ch 79 | Threat Modeling | [Complete] |
 | Ch 80 | Defense in Depth | [Stub] |
 | Ch 81 | Input Validation | [Stub] |
 | Ch 82 | Authentication vs. Authorization | [Stub] |
