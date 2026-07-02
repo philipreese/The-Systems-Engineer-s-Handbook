@@ -332,6 +332,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **burn rate**: The ratio of a service's current error rate to the error rate that would exactly exhaust its error budget over the budget's full tracking window. Evaluated across multiple sliding windows at once to catch both a sudden, severe spike and a slow, persistent leak — either of which a single static threshold alert misses in one direction or the other. First introduced in: [Part IX, Ch 73](part09-observability/ch73-error-budgets-and-slos.md).
 
+**coordination model**: The choice, made before and independent of any execution-unit decision, of how concurrent units of execution coordinate correctness over data they touch — either by accessing shared memory under synchronization or by exchanging copies of data through message passing. Contrasted with the execution model (thread, process, async task) that actually runs the work. First introduced in: [Part X, Ch 74](part10-concurrency/ch74-shared-state-vs-message-passing.md).
+
+**shared-state concurrency**: A coordination model in which multiple concurrent units of execution read and write the same memory location, so correctness depends entirely on synchronizing every access to it. Contrasted with message-passing concurrency. First introduced in: [Part X, Ch 74](part10-concurrency/ch74-shared-state-vs-message-passing.md).
+
+**message-passing concurrency**: A coordination model in which each concurrent unit of execution exclusively owns its own state and communicates only by sending copies of data through a channel, mailbox, or queue, eliminating shared memory — and therefore data races — by construction. Contrasted with shared-state concurrency. First introduced in: [Part X, Ch 74](part10-concurrency/ch74-shared-state-vs-message-passing.md).
+
+**data race**: Two concurrent accesses to the same memory location, at least one of them a write, with no synchronization establishing an ordering between them. The concurrency-specific instance of the undefined behavior defined in Ch 33 — not merely a wrong answer, but a condition the language no longer makes any guarantee about. First introduced in: [Part X, Ch 74](part10-concurrency/ch74-shared-state-vs-message-passing.md).
+
 ---
 
 ## Format
