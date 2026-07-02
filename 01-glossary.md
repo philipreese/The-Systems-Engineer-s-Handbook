@@ -396,6 +396,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **denylist validation**: A validation posture that accepts all input except what matches a known-bad pattern or signature. Never complete, requires continuous maintenance as new bypass techniques surface, and is trivially defeated by any encoding or obfuscation its author didn't anticipate — defensible only as a supplemental detection signal, not a primary validation gate. Contrasted with allowlist validation. First introduced in: [Part XI, Ch 81](part11-security/ch81-input-validation.md).
 
+**RBAC (Role-Based Access Control)**: An authorization model that groups permissions into named roles and assigns callers to roles, with access computed as the union of a caller's assigned roles' permissions. Intuitive to reason about and audit when permissions map onto a small, stable set of organizational roles; prone to role explosion when forced to express context-dependent constraints it has no native vocabulary for. Contrasted with ABAC. First introduced in: [Part XI, Ch 82](part11-security/ch82-authentication-vs-authorization.md).
+
+**ABAC (Attribute-Based Access Control)**: An authorization model that evaluates a policy against runtime attributes of the subject, resource, action, and environment at the moment of the request, rather than a fixed role membership. Expresses relational and contextual constraints RBAC cannot natively represent, at the cost of a policy surface that has no static answer to "what can this user access" — the answer is computed per request. Contrasted with RBAC. First introduced in: [Part XI, Ch 82](part11-security/ch82-authentication-vs-authorization.md).
+
+**delegated authorization**: The pattern where a service acts on a user's behalf using a narrowly scoped, revocable credential issued by an identity provider, instead of the user's primary credential — eliminating the need to share a password with every application that needs limited access. The mechanism OAuth 2.0 formalizes, and the structural alternative to direct credential sharing. First introduced in: [Part XI, Ch 82](part11-security/ch82-authentication-vs-authorization.md).
+
 ---
 
 ## Format
