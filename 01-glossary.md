@@ -32,6 +32,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **Cynefin framework**: A sense-making model (Snowden) that classifies problems by the relationship between cause and effect: Simple (best practice applies), Complicated (analysis required, right answer exists), Complex (probe-sense-respond, no single right answer), Chaotic (act first to restore order). Most architectural decisions are complicated. First introduced in: [Part I, Ch 09](part01-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
 
+**cardinality (metric)**: The number of distinct label-value combinations a metric can take on. Metrics stay cheap because cardinality is kept low and bounded; a label carrying a near-unique value per event (a user ID, a request ID) produces close to one time series per event, collapsing the cost advantage that distinguishes a metric from a log. First introduced in: [Part IX, Ch 70](part09-observability/ch70-metrics-vs-logs-vs-traces.md).
+
 **cursor (keyset pagination)**: A stable, unique, sortable pointer to a specific position in a collection, used to anchor a pagination request ("items after this one") instead of a relative offset counted from the start. Lets the database jump directly to the position via an index, giving constant performance regardless of depth and immunity to page drift. First introduced in: [Part III, Ch 23](part03-api-design/ch23-pagination-and-streaming.md).
 
 **cyclomatic complexity**: A quantitative measure of the number of independent execution paths through a program, derived from the control flow graph. Higher values indicate harder-to-test and harder-to-reason-about code. First introduced in: [Part I, Ch 02](part01-systems-thinking/ch02-complexity-is-the-enemy.md).
