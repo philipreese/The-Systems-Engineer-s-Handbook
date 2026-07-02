@@ -306,6 +306,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **documentation tax**: The ongoing cost of a piece of external documentation — being located, read, trusted, and eventually corrected by someone who did not write it — as distinct from the one-time cost of writing it. Paid indefinitely once a page exists, whether or not the page turns out to have been worth writing. First introduced in: [Part VIII, Ch 64](part08-documentation/ch64-what-to-document-vs-what-to-leave-to-the-code.md).
 
+**living document**: A documentation artifact expected to always describe the system as it currently exists — a README, a generated API reference — as distinct from a point-in-time record like a spec or ADR, which is allowed to diverge from present reality without being wrong. A living document that goes stale is a failure the artifact was supposed to prevent; a stale point-in-time record is functioning as designed. First introduced in: [Part VIII, Ch 65](part08-documentation/ch65-readme-vs-spec-vs-adr-vs-inline-comment.md).
+
 ---
 
 ## Format
