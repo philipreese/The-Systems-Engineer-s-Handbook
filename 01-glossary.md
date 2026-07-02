@@ -356,6 +356,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **I/O-bound work**: Work whose completion time is limited primarily by waiting on an external resource — network or disk — rather than by processor computation. Benefits from concurrency that overlaps multiple waits cheaply rather than from added CPU cores. Contrasted with CPU-bound work. First introduced in: [Part X, Ch 76](part10-concurrency/ch76-async-vs-threads-vs-processes.md).
 
+**deadlock**: A set of concurrent execution units each waiting indefinitely for a resource held by another member of the same set, forming a cycle in which no participant can proceed and none will release what it already holds — a permanent, total standstill. Contrasted with livelock and starvation. First introduced in: [Part X, Ch 77](part10-concurrency/ch77-deadlock-livelock-and-starvation.md).
+
+**livelock**: A concurrency failure where execution units continuously change state and respond to one another yet make no forward progress — the system stays active without ever completing useful work, distinguishing it from deadlock's total standstill. First introduced in: [Part X, Ch 77](part10-concurrency/ch77-deadlock-livelock-and-starvation.md).
+
+**starvation**: A concurrency failure where a correct, ready-to-proceed execution unit is perpetually denied the resource or scheduling turn it needs, while the rest of the system continues operating normally — a fairness failure rather than a correctness or activity failure. First introduced in: [Part X, Ch 77](part10-concurrency/ch77-deadlock-livelock-and-starvation.md).
+
+**Coffman conditions**: The four conditions — mutual exclusion, hold-and-wait, no preemption, and circular wait — that must all hold simultaneously for deadlock to occur. Breaking any single one is sufficient to prevent it; breaking circular wait via a consistent global lock-acquisition order is the cheapest and most common technique, because it requires giving up none of the other three. First introduced in: [Part X, Ch 77](part10-concurrency/ch77-deadlock-livelock-and-starvation.md).
+
 ---
 
 ## Format
