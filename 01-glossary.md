@@ -308,6 +308,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **living document**: A documentation artifact expected to always describe the system as it currently exists — a README, a generated API reference — as distinct from a point-in-time record like a spec or ADR, which is allowed to diverge from present reality without being wrong. A living document that goes stale is a failure the artifact was supposed to prevent; a stale point-in-time record is functioning as designed. First introduced in: [Part VIII, Ch 65](part08-documentation/ch65-readme-vs-spec-vs-adr-vs-inline-comment.md).
 
+**executable documentation**: Documentation content that is mechanically verified by the build itself — a code sample that is actually compiled and executed, a link that is checked, a schema validated against the real API it documents — converting a specific class of drift into a build failure instead of a silent, undetected one. Covers only what's objectively checkable; explanatory accuracy remains a human audit responsibility. First introduced in: [Part VIII, Ch 66](part08-documentation/ch66-keeping-documentation-honest.md).
+
 ---
 
 ## Format
