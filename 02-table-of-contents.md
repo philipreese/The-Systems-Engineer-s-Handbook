@@ -165,7 +165,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Chapter | Title | Status |
 |---------|-------|--------|
 | Ch 74 | Shared State vs. Message Passing | [Complete] |
-| Ch 75 | Locks: When to Use Them | [Stub] |
+| Ch 75 | Locks: When to Use Them | [Complete] |
 | Ch 76 | Async vs. Threads vs. Processes | [Stub] |
 | Ch 77 | Deadlock, Livelock, and Starvation | [Stub] |
 | Ch 78 | The Actor Model | [Stub] |

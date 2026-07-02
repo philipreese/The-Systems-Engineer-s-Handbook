@@ -340,6 +340,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **data race**: Two concurrent accesses to the same memory location, at least one of them a write, with no synchronization establishing an ordering between them. The concurrency-specific instance of the undefined behavior defined in Ch 33 — not merely a wrong answer, but a condition the language no longer makes any guarantee about. First introduced in: [Part X, Ch 74](part10-concurrency/ch74-shared-state-vs-message-passing.md).
 
+**critical section**: The minimal span of code that reads or mutates shared state and must execute as if atomic — with respect to every other concurrent accessor of that same state — to avoid a data race. A lock protects the invariant guarded by a critical section, not merely the memory location it touches. First introduced in: [Part X, Ch 75](part10-concurrency/ch75-locks-when-to-use-them.md).
+
+**lock granularity**: How much shared state a single lock protects, ranging from one lock guarding an entire subsystem (coarse-grained) to many independent locks each guarding a narrow slice of it (fine-grained). Coarser locking is easier to reason about and carries no multi-lock deadlock risk; finer locking buys parallelism under contention at the cost of exponentially more interleavings to reason about. First introduced in: [Part X, Ch 75](part10-concurrency/ch75-locks-when-to-use-them.md).
+
+**lock contention**: The condition where one or more threads are blocked waiting to acquire a lock currently held by another thread, forcing the waiting threads to idle or context-switch instead of making progress. The measured signal that justifies moving from coarse-grained to fine-grained locking — and the thing that should be measured before that move is made, not assumed. First introduced in: [Part X, Ch 75](part10-concurrency/ch75-locks-when-to-use-them.md).
+
+**optimistic concurrency control (OCC)**: A lock-avoiding coordination strategy where an operation executes speculatively against a local copy of shared data, then checks at commit time whether the underlying data changed underneath it, retrying the whole operation on conflict rather than blocking upfront. Delivers near-native throughput when conflicts are rare; degrades sharply into a retry storm when they are not. Contrasted with pessimistic locking. First introduced in: [Part X, Ch 75](part10-concurrency/ch75-locks-when-to-use-them.md).
+
 ---
 
 ## Format
