@@ -19,7 +19,7 @@ Version control strategy and the delivery pipeline: branching, commit discipline
 | Ch 58 | Fail-Fast vs. Fail-Safe Pipeline Design | [Complete] |
 | Ch 59 | Caching Strategy in CI | [Complete] |
 | Ch 60 | Matrix Builds | [Complete] |
-| Ch 61 | Release Automation | [Stub] |
+| Ch 61 | Release Automation | [Complete] |
 | Ch 62 | Environment Promotion | [Stub] |
 | Ch 63 | Toolchain and Dependency Management | [Stub] |
 
