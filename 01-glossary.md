@@ -382,6 +382,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **threat model**: The structured output of identifying a system's assets, adversaries, trust boundaries, and attack surface before implementation begins — the design-time artifact this Part's remaining chapters assume already exists when they discuss specific controls. First introduced in: [Part XI, Ch 79](part11-security/ch79-threat-modeling.md).
 
+**defense in depth**: The architectural principle that no single security control should be the only thing standing between an asset and a successful attack — independent, redundant controls are layered at every tier (network, host, runtime, application, data) so that one layer's failure exposes the next layer rather than the asset itself. Ch 24's zero-trust architecture generalized past the single service-to-service boundary it originally covered. First introduced in: [Part XI, Ch 80](part11-security/ch80-defense-in-depth.md).
+
+**assume-breach posture**: The design stance that treats every individual security control as eventually failing or being bypassed, and designs containment around that certainty instead of trying to build a control that cannot fail. The security-specific application of Ch 07's partial-failure argument. First introduced in: [Part XI, Ch 80](part11-security/ch80-defense-in-depth.md).
+
+**lateral movement**: An attacker's progression from an initial, often narrow foothold to other systems inside a network, made possible when internal boundaries fail to re-verify trust and the compromise of one component is implicitly extended to everything reachable from it. The defining failure mode of perimeter-only security. First introduced in: [Part XI, Ch 80](part11-security/ch80-defense-in-depth.md).
+
 ---
 
 ## Format
