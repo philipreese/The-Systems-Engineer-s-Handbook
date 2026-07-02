@@ -402,6 +402,12 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **delegated authorization**: The pattern where a service acts on a user's behalf using a narrowly scoped, revocable credential issued by an identity provider, instead of the user's primary credential — eliminating the need to share a password with every application that needs limited access. The mechanism OAuth 2.0 formalizes, and the structural alternative to direct credential sharing. First introduced in: [Part XI, Ch 82](part11-security/ch82-authentication-vs-authorization.md).
 
+**secret**: Any credential, key, or token whose disclosure to an unintended party grants that party capability it shouldn't have — a password, an API key, a signing key, a session token. The defining property is not confidentiality but authority: the security problem is unauthorized capability, not disclosure in the abstract. First introduced in: [Part XI, Ch 83](part11-security/ch83-secrets-management.md).
+
+**credential scoping**: Limiting both the permissions and the lifetime of an issued credential to the minimum a specific task requires, rather than issuing broad, long-lived access for convenience. The complementary mitigation to rotation: rotation limits how long a leaked credential stays useful, scoping limits how much damage it can do before it's rotated. First introduced in: [Part XI, Ch 83](part11-security/ch83-secrets-management.md).
+
+**trusted publishing**: An OIDC-based authentication pattern where a CI pipeline exchanges a short-lived, workload-scoped identity assertion for a temporary publish session, with no static credential persisted anywhere for anything to leak. Strictly better than rotating a long-lived token, since there's no standing secret to rotate in the first place. First introduced in: [Part VII, Ch 61](part07-git-and-delivery/ch61-release-automation.md); full treatment in: [Part XI, Ch 83](part11-security/ch83-secrets-management.md).
+
 ---
 
 ## Format
