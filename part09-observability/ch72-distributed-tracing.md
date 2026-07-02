@@ -79,7 +79,7 @@ Trace context (explicit causality):
 
 ---
 
-Where tracing sits relative to logs and metrics — which question each one answers — is already settled in Ch 70; this chapter only goes deep on tracing's own mechanics. Whether a trace-derived latency signal is worth paging a human over is Ch 71's decision. And propagating a trace context across an untrusted boundary carries its own exposure risk — it can leak internal topology to anyone able to read it — which this chapter flags but leaves entirely to Part XI.
+Where tracing sits relative to logs and metrics — which question each one answers — is already settled in Ch 70; this chapter only goes deep on tracing's own mechanics. Whether a trace-derived latency signal is worth paging a human over is Ch 71's decision. And propagating a trace context across an untrusted boundary carries its own exposure risk — it can leak internal topology to anyone able to read it — which this chapter flags but leaves entirely to Part XI, Ch 79.
 
 ### Why Smart Engineers Disagree
 

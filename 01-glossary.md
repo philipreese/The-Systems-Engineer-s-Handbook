@@ -332,6 +332,46 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **burn rate**: The ratio of a service's current error rate to the error rate that would exactly exhaust its error budget over the budget's full tracking window. Evaluated across multiple sliding windows at once to catch both a sudden, severe spike and a slow, persistent leak — either of which a single static threshold alert misses in one direction or the other. First introduced in: [Part IX, Ch 73](part09-observability/ch73-error-budgets-and-slos.md).
 
+**coordination model**: The choice, made before and independent of any execution-unit decision, of how concurrent units of execution coordinate correctness over data they touch — either by accessing shared memory under synchronization or by exchanging copies of data through message passing. Contrasted with the execution model (thread, process, async task) that actually runs the work. First introduced in: [Part X, Ch 74](part10-concurrency/ch74-shared-state-vs-message-passing.md).
+
+**shared-state concurrency**: A coordination model in which multiple concurrent units of execution read and write the same memory location, so correctness depends entirely on synchronizing every access to it. Contrasted with message-passing concurrency. First introduced in: [Part X, Ch 74](part10-concurrency/ch74-shared-state-vs-message-passing.md).
+
+**message-passing concurrency**: A coordination model in which each concurrent unit of execution exclusively owns its own state and communicates only by sending copies of data through a channel, mailbox, or queue, eliminating shared memory — and therefore data races — by construction. Contrasted with shared-state concurrency. First introduced in: [Part X, Ch 74](part10-concurrency/ch74-shared-state-vs-message-passing.md).
+
+**data race**: Two concurrent accesses to the same memory location, at least one of them a write, with no synchronization establishing an ordering between them. The concurrency-specific instance of the undefined behavior defined in Ch 33 — not merely a wrong answer, but a condition the language no longer makes any guarantee about. First introduced in: [Part X, Ch 74](part10-concurrency/ch74-shared-state-vs-message-passing.md).
+
+**critical section**: The minimal span of code that reads or mutates shared state and must execute as if atomic — with respect to every other concurrent accessor of that same state — to avoid a data race. A lock protects the invariant guarded by a critical section, not merely the memory location it touches. First introduced in: [Part X, Ch 75](part10-concurrency/ch75-locks-when-to-use-them.md).
+
+**lock granularity**: How much shared state a single lock protects, ranging from one lock guarding an entire subsystem (coarse-grained) to many independent locks each guarding a narrow slice of it (fine-grained). Coarser locking is easier to reason about and carries no multi-lock deadlock risk; finer locking buys parallelism under contention at the cost of exponentially more interleavings to reason about. First introduced in: [Part X, Ch 75](part10-concurrency/ch75-locks-when-to-use-them.md).
+
+**lock contention**: The condition where one or more threads are blocked waiting to acquire a lock currently held by another thread, forcing the waiting threads to idle or context-switch instead of making progress. The measured signal that justifies moving from coarse-grained to fine-grained locking — and the thing that should be measured before that move is made, not assumed. First introduced in: [Part X, Ch 75](part10-concurrency/ch75-locks-when-to-use-them.md).
+
+**optimistic concurrency control (OCC)**: A lock-avoiding coordination strategy where an operation executes speculatively against a local copy of shared data, then checks at commit time whether the underlying data changed underneath it, retrying the whole operation on conflict rather than blocking upfront. Delivers near-native throughput when conflicts are rare; degrades sharply into a retry storm when they are not. Contrasted with pessimistic locking. First introduced in: [Part X, Ch 75](part10-concurrency/ch75-locks-when-to-use-them.md).
+
+**concurrency**: The structural property of a program organized to make progress on more than one unit of work during overlapping periods of time. A property of code structure, not execution — it requires no particular hardware and can run on a single core. Contrasted with parallelism. First introduced in: [Part X, Ch 76](part10-concurrency/ch76-async-vs-threads-vs-processes.md).
+
+**parallelism**: The literal, simultaneous execution of more than one unit of work at the same physical instant, requiring multiple CPU cores or hardware execution units. A property of execution, not of code structure. Contrasted with concurrency. First introduced in: [Part X, Ch 76](part10-concurrency/ch76-async-vs-threads-vs-processes.md).
+
+**CPU-bound work**: Work whose completion time is limited by the processor's own computation rate rather than by waiting on an external resource. Adding concurrency without adding execution cores cannot make it faster, because the bottleneck is parallelism, not scheduling. Contrasted with I/O-bound work. First introduced in: [Part X, Ch 76](part10-concurrency/ch76-async-vs-threads-vs-processes.md).
+
+**I/O-bound work**: Work whose completion time is limited primarily by waiting on an external resource — network or disk — rather than by processor computation. Benefits from concurrency that overlaps multiple waits cheaply rather than from added CPU cores. Contrasted with CPU-bound work. First introduced in: [Part X, Ch 76](part10-concurrency/ch76-async-vs-threads-vs-processes.md).
+
+**deadlock**: A set of concurrent execution units each waiting indefinitely for a resource held by another member of the same set, forming a cycle in which no participant can proceed and none will release what it already holds — a permanent, total standstill. Contrasted with livelock and starvation. First introduced in: [Part X, Ch 77](part10-concurrency/ch77-deadlock-livelock-and-starvation.md).
+
+**livelock**: A concurrency failure where execution units continuously change state and respond to one another yet make no forward progress — the system stays active without ever completing useful work, distinguishing it from deadlock's total standstill. First introduced in: [Part X, Ch 77](part10-concurrency/ch77-deadlock-livelock-and-starvation.md).
+
+**starvation**: A concurrency failure where a correct, ready-to-proceed execution unit is perpetually denied the resource or scheduling turn it needs, while the rest of the system continues operating normally — a fairness failure rather than a correctness or activity failure. First introduced in: [Part X, Ch 77](part10-concurrency/ch77-deadlock-livelock-and-starvation.md).
+
+**Coffman conditions**: The four conditions — mutual exclusion, hold-and-wait, no preemption, and circular wait — that must all hold simultaneously for deadlock to occur. Breaking any single one is sufficient to prevent it; breaking circular wait via a consistent global lock-acquisition order is the cheapest and most common technique, because it requires giving up none of the other three. First introduced in: [Part X, Ch 77](part10-concurrency/ch77-deadlock-livelock-and-starvation.md).
+
+**actor**: An isolated unit of computation that owns private state no other actor can directly access or mutate, communicates exclusively through asynchronous messages delivered to its own mailbox, and processes exactly one message at a time. The unit of the actor model, the extreme point of Ch 74's message-passing spectrum. First introduced in: [Part X, Ch 78](part10-concurrency/ch78-the-actor-model.md).
+
+**mailbox**: The queue through which an actor receives messages, processed one at a time in delivery order. Subject to the same arrival-rate-versus-service-rate dynamics as any other queue (Ch 08's Little's Law); an actor's mailbox growing without bound is backpressure's concurrency-architecture-specific failure mode. First introduced in: [Part X, Ch 78](part10-concurrency/ch78-the-actor-model.md).
+
+**supervision tree**: A hierarchy of actors in which a supervising actor monitors its children and decides how to respond when one crashes — restart it, replace it, or propagate the failure upward — rather than requiring the failing actor to defensively anticipate and recover from every possible fault inline. First introduced in: [Part X, Ch 78](part10-concurrency/ch78-the-actor-model.md).
+
+**let it crash**: The actor-model philosophy of allowing an actor that hits an unexpected error to terminate outright rather than defensively coding it to survive every conceivable failure inline, trusting a supervising actor to restart it into a known-good state instead. The concurrency-architecture application of Ch 07's fail-fast principle and MTTR-over-MTBF framing, applied at process-isolation granularity instead of whole-system granularity. First introduced in: [Part X, Ch 78](part10-concurrency/ch78-the-actor-model.md).
+
 ---
 
 ## Format

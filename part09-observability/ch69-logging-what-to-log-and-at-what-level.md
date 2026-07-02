@@ -9,7 +9,7 @@
 - [Strong Recommendation] Log levels classify who is expected to act and how urgently, not how the author felt while writing the code. The identical event can legitimately be DEBUG in one service and ERROR in another, depending on who is expected to respond and when.
 - [Consensus] Structured, machine-parseable fields beat free-text messages once logs are aggregated across more than a handful of services. Every request-scoped entry should carry the correlation ID from Ch 21 so a request's full history is one indexed query instead of a manual reconstruction.
 - Logging is a cost center, not a free byproduct of execution: every retained line is paid for in ingestion, storage, index size, and query latency — paid at exactly the moment, an active incident, when that latency is least affordable. Logging on the chance it's needed repeats Ch 64's documentation-coverage mistake with a runtime signal instead of a written one.
-- A log is a second, less-audited copy of application data. What gets logged, and what parses it, are both part of the system's attack surface, not a debugging convenience — flagged here, owned by Part XI, Ch 83.
+- A log is a second, less-audited copy of application data, and its attack surface has two distinct sides: what gets logged (a sensitive value captured as a side effect is Part XI, Ch 83's concern) and what parses it (a pipeline that lets logged content influence what it does next, the way Log4Shell did, is Part XI, Ch 81's).
 
 ---
 
@@ -115,7 +115,7 @@ Every request-scoped structured entry should include the correlation ID introduc
 
 **Common failure modes:** A service under an on-the-chance logging policy logs the full request body of every incoming request, including malformed ones. An unthrottled attack sends malformed payloads at volume; ingestion spikes, saturating the log backend's disk I/O; the log cluster falls over under the load, and the team investigating the attack loses visibility into every other service at the exact moment they need it most — the logging policy meant to provide forensic insurance during an incident instead causes the outage that erases it.
 
-**Example:** The Log4Shell vulnerability (CVE-2021-44228) demonstrated that a logging library is part of a system's attack surface, not a passive utility sitting outside it. Applications that logged raw, unvalidated user input — an HTTP `User-Agent` header, for instance — through a vulnerable version of Apache Log4j allowed a crafted string to trigger remote code execution inside the logging call itself. Logging everything without validating or scrubbing what gets logged is not a neutral default; it's an architectural risk decision, made by omission.
+**Example:** The Log4Shell vulnerability (CVE-2021-44228) demonstrated that a logging library is part of a system's attack surface, not a passive utility sitting outside it. Applications that logged raw, unvalidated user input — an HTTP `User-Agent` header, for instance — through a vulnerable version of Apache Log4j allowed a crafted string to trigger remote code execution inside the logging call itself. Logging everything without validating or scrubbing what gets logged is not a neutral default; it's an architectural risk decision, made by omission. The defect itself was a missing input-validation step on untrusted data before it reached an interpreter capable of acting on it — Part XI, Ch 81's subject, not a logging-level or secrets mistake.
 
 ---
 
