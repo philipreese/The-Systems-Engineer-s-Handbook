@@ -28,6 +28,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **the action problem**: The recurring case in resource-oriented API design where a real business operation — canceling an order, refunding a payment — doesn't map cleanly onto standard CRUD verbs (GET/PUT/PATCH/DELETE), forcing a choice between generic state patching, an explicit sub-resource action endpoint, or a separate action resource. First introduced in: [Part III, Ch 20](part03-api-design/ch20-resource-modeling.md).
 
+**actionability test**: The filter for whether a runtime log line belongs in the system: would a specific person make a different decision because this line exists, rather than whether the event felt notable to the engineer who wrote it. First introduced in: [Part IX, Ch 69](part09-observability/ch69-logging-what-to-log-and-at-what-level.md).
+
 **Cynefin framework**: A sense-making model (Snowden) that classifies problems by the relationship between cause and effect: Simple (best practice applies), Complicated (analysis required, right answer exists), Complex (probe-sense-respond, no single right answer), Chaotic (act first to restore order). Most architectural decisions are complicated. First introduced in: [Part I, Ch 09](part01-systems-thinking/ch09-decision-frameworks-for-trade-offs.md).
 
 **cursor (keyset pagination)**: A stable, unique, sortable pointer to a specific position in a collection, used to anchor a pagination request ("items after this one") instead of a relative offset counted from the start. Lets the database jump directly to the position via an index, giving constant performance regardless of depth and immunity to page drift. First introduced in: [Part III, Ch 23](part03-api-design/ch23-pagination-and-streaming.md).

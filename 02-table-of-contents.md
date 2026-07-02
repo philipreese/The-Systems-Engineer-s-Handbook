@@ -150,7 +150,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 69 | Logging: What to Log and at What Level | [Stub] |
+| Ch 69 | Logging: What to Log and at What Level | [Complete] |
 | Ch 70 | Metrics vs. Logs vs. Traces | [Stub] |
 | Ch 71 | Alerting: Signal vs. Noise | [Stub] |
 | Ch 72 | Distributed Tracing | [Stub] |
