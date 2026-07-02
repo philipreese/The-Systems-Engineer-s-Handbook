@@ -388,6 +388,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **lateral movement**: An attacker's progression from an initial, often narrow foothold to other systems inside a network, made possible when internal boundaries fail to re-verify trust and the compromise of one component is implicitly extended to everything reachable from it. The defining failure mode of perimeter-only security. First introduced in: [Part XI, Ch 80](part11-security/ch80-defense-in-depth.md).
 
+**injection**: The failure pattern where untrusted input is concatenated into a string that a downstream interpreter — a SQL engine, a shell, a template renderer, an LDAP client — then executes or evaluates as instructions rather than treats strictly as data. The same architectural mistake recurring across SQL injection, command injection, template injection, and Log4Shell, differing only in which interpreter is targeted. First introduced in: [Part XI, Ch 81](part11-security/ch81-input-validation.md).
+
+**parameterization**: A structural defense against injection that separates executable instructions from supplied data values at the interpreter's protocol level — the interpreter compiles the instruction structure first, entirely independent of the data, so supplied values can never be read as anything but data regardless of their contents. Contrasted with defensive cleansing (escaping or filtering characters within a single concatenated string), which it structurally dominates. First introduced in: [Part XI, Ch 81](part11-security/ch81-input-validation.md).
+
+**allowlist validation**: A validation posture that accepts only input matching an explicitly defined, known-good shape — a format, a bounded length, an enumerated set of values — rather than trying to enumerate every malicious variant in advance. Preferred over denylist validation because the space of legitimate inputs is small and stable while the space of malicious ones is unbounded and adversarially evolving. First introduced in: [Part XI, Ch 81](part11-security/ch81-input-validation.md).
+
+**denylist validation**: A validation posture that accepts all input except what matches a known-bad pattern or signature. Never complete, requires continuous maintenance as new bypass techniques surface, and is trivially defeated by any encoding or obfuscation its author didn't anticipate — defensible only as a supplemental detection signal, not a primary validation gate. Contrasted with allowlist validation. First introduced in: [Part XI, Ch 81](part11-security/ch81-input-validation.md).
+
 ---
 
 ## Format
