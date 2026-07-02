@@ -300,6 +300,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **stale-cache masking**: The failure mode where a cached build or dependency artifact is valid under its own cache key's rules but no longer matches what a clean build from scratch would produce, causing a pipeline to pass for the wrong reason. The reason a scheduled, cache-bypassing clean build is a necessary backstop rather than an optional debugging step. First introduced in: [Part VII, Ch 59](part07-git-and-delivery/ch59-caching-strategy-in-ci.md).
 
+**build-once-promote-many**: The practice of compiling or packaging a single immutable artifact exactly once, then deploying that identical artifact, unchanged, through every subsequent environment rather than rebuilding from source at each stage. Guarantees that what was validated in an earlier environment is what actually runs in a later one. First introduced in: [Part VII, Ch 62](part07-git-and-delivery/ch62-environment-promotion.md).
+
 ---
 
 ## Format

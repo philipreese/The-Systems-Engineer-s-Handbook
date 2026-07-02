@@ -125,7 +125,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Ch 59 | Caching Strategy in CI | [Complete] |
 | Ch 60 | Matrix Builds | [Complete] |
 | Ch 61 | Release Automation | [Complete] |
-| Ch 62 | Environment Promotion | [Stub] |
+| Ch 62 | Environment Promotion | [Complete] |
 | Ch 63 | Toolchain and Dependency Management | [Stub] |
 
 ---
