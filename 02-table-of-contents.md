@@ -123,7 +123,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 | Ch 57 | What Belongs in CI (and What Doesn't) | [Complete] |
 | Ch 58 | Fail-Fast vs. Fail-Safe Pipeline Design | [Complete] |
 | Ch 59 | Caching Strategy in CI | [Complete] |
-| Ch 60 | Matrix Builds | [Stub] |
+| Ch 60 | Matrix Builds | [Complete] |
 | Ch 61 | Release Automation | [Stub] |
 | Ch 62 | Environment Promotion | [Stub] |
 | Ch 63 | Toolchain and Dependency Management | [Stub] |
