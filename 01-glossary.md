@@ -364,6 +364,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **Coffman conditions**: The four conditions — mutual exclusion, hold-and-wait, no preemption, and circular wait — that must all hold simultaneously for deadlock to occur. Breaking any single one is sufficient to prevent it; breaking circular wait via a consistent global lock-acquisition order is the cheapest and most common technique, because it requires giving up none of the other three. First introduced in: [Part X, Ch 77](part10-concurrency/ch77-deadlock-livelock-and-starvation.md).
 
+**actor**: An isolated unit of computation that owns private state no other actor can directly access or mutate, communicates exclusively through asynchronous messages delivered to its own mailbox, and processes exactly one message at a time. The unit of the actor model, the extreme point of Ch 74's message-passing spectrum. First introduced in: [Part X, Ch 78](part10-concurrency/ch78-the-actor-model.md).
+
+**mailbox**: The queue through which an actor receives messages, processed one at a time in delivery order. Subject to the same arrival-rate-versus-service-rate dynamics as any other queue (Ch 08's Little's Law); an actor's mailbox growing without bound is backpressure's concurrency-architecture-specific failure mode. First introduced in: [Part X, Ch 78](part10-concurrency/ch78-the-actor-model.md).
+
+**supervision tree**: A hierarchy of actors in which a supervising actor monitors its children and decides how to respond when one crashes — restart it, replace it, or propagate the failure upward — rather than requiring the failing actor to defensively anticipate and recover from every possible fault inline. First introduced in: [Part X, Ch 78](part10-concurrency/ch78-the-actor-model.md).
+
+**let it crash**: The actor-model philosophy of allowing an actor that hits an unexpected error to terminate outright rather than defensively coding it to survive every conceivable failure inline, trusting a supervising actor to restart it into a known-good state instead. The concurrency-architecture application of Ch 07's fail-fast principle and MTTR-over-MTBF framing, applied at process-isolation granularity instead of whole-system granularity. First introduced in: [Part X, Ch 78](part10-concurrency/ch78-the-actor-model.md).
+
 ---
 
 ## Format
