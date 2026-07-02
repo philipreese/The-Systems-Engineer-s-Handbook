@@ -408,6 +408,14 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **trusted publishing**: An OIDC-based authentication pattern where a CI pipeline exchanges a short-lived, workload-scoped identity assertion for a temporary publish session, with no static credential persisted anywhere for anything to leak. Strictly better than rotating a long-lived token, since there's no standing secret to rotate in the first place. First introduced in: [Part VII, Ch 61](part07-git-and-delivery/ch61-release-automation.md); full treatment in: [Part XI, Ch 83](part11-security/ch83-secrets-management.md).
 
+**lockfile**: An immutable manifest recording the exact version, source, and content hash of every direct and transitive dependency a build resolves. Converts "trust that nothing changed since last time" into a fact the build system verifies automatically — Principle 8 applied to the build plane — rather than a discipline anyone has to remember to apply. First introduced in: [Part XI, Ch 84](part11-security/ch84-dependency-supply-chain-risk.md).
+
+**provenance attestation**: A cryptographic record proving that a specific artifact was built by a specific pipeline from a specific source commit, as distinct from merely verifying that a version number or publishing account matches. Extends Ch 56's tag-signing argument from "who possessed the signing key" to "was this exact binary produced the way it claims to have been" — closing a gap a stolen publishing credential alone cannot. First introduced in: [Part XI, Ch 84](part11-security/ch84-dependency-supply-chain-risk.md).
+
+**SBOM (Software Bill of Materials)**: A machine-readable inventory of every direct and transitive dependency, and toolchain component, actually built into a release. Converts "what's inside this build" from a manual audit performed after a vulnerability is disclosed into a query against an asset already on hand. First introduced in: [Part XI, Ch 84](part11-security/ch84-dependency-supply-chain-risk.md).
+
+**dependency confusion**: A supply-chain attack that exploits namespace ambiguity between a private and a public package registry: an attacker publishes a public package sharing an internal package's name, at a higher version, so a build system configured to prefer the public registry or the higher version resolves to the attacker's package instead of the internal one. First introduced in: [Part XI, Ch 84](part11-security/ch84-dependency-supply-chain-risk.md).
+
 ---
 
 ## Format

@@ -13,7 +13,7 @@ Threat modeling, defense in depth, input validation, authentication, secrets, an
 | Ch 81 | Input Validation | [Complete] |
 | Ch 82 | Authentication vs. Authorization | [Complete] |
 | Ch 83 | Secrets Management | [Complete] |
-| Ch 84 | Dependency Supply Chain Risk | [Stub] |
+| Ch 84 | Dependency Supply Chain Risk | [Complete] |
 
 ---
 
