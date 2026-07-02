@@ -310,6 +310,8 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **executable documentation**: Documentation content that is mechanically verified by the build itself — a code sample that is actually compiled and executed, a link that is checked, a schema validated against the real API it documents — converting a specific class of drift into a build failure instead of a silent, undetected one. Covers only what's objectively checkable; explanatory accuracy remains a human audit responsibility. First introduced in: [Part VIII, Ch 66](part08-documentation/ch66-keeping-documentation-honest.md).
 
+**paper runbook**: A runbook that has been written but never actually executed against a real or simulated failure, so its correctness is an unverified assumption rather than a demonstrated fact. Carries the same false-confidence risk as an untested code path (Ch 41's execution-verification gap) — the document existing is not evidence it works, and the only reader positioned to discover it doesn't is someone already mid-incident. First introduced in: [Part VIII, Ch 68](part08-documentation/ch68-runbooks-and-operational-documentation.md).
+
 ---
 
 ## Format

@@ -12,7 +12,7 @@ What to document, what not to, and how to keep documentation from drifting into 
 | Ch 65 | README vs. Spec vs. ADR vs. Inline Comment | [Complete] |
 | Ch 66 | Keeping Documentation Honest | [Complete] |
 | Ch 67 | API Documentation: What Consumers Need | [Complete] |
-| Ch 68 | Runbooks and Operational Documentation | [Stub] |
+| Ch 68 | Runbooks and Operational Documentation | [Complete] |
 
 ---
 
