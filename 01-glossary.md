@@ -94,9 +94,13 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **state space explosion**: The condition where mutable state variables combine to produce a number of possible system configurations that exceeds what engineers can anticipate or test. A primary failure mode of unconstrained mutable state. First introduced in: [Part I, Ch 02](part01-systems-thinking/ch02-complexity-is-the-enemy.md).
 
+**measured bottleneck**: A component confirmed, through end-to-end measurement, to be the actual constraint limiting a system against a violated requirement — as distinct from a local hotspot, a component that merely profiles as slow in isolation without evidence it limits the system overall. First introduced in: [Part XII, Ch 85](part12-performance/ch85-when-to-optimize.md).
+
 **MTBF (Mean Time Between Failures)**: A reliability paradigm that optimizes for preventing failures from occurring. Contrasted with MTTR. First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 
 **MTTR (Mean Time To Recovery)**: A reliability paradigm that accepts failures as inevitable and optimizes for recovering from them quickly. Contrasted with MTBF. First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
+
+**Optimization Gate**: The condition that must hold before performance work counts as justified engineering rather than speculative refinement: a documented requirement (an SLO, a cost budget, a measured UX threshold) is being violated, and a measured bottleneck — not merely a local hotspot — has been identified as the cause. First introduced in: [Part XII, Ch 85](part12-performance/ch85-when-to-optimize.md).
 
 **optimization target**: An objective a system is designed to optimize — latency, throughput, reliability, cost of change, etc. Targets may be explicit (documented) or implicit (inferred). First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 

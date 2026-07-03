@@ -193,7 +193,7 @@ Status: `[Stub]` = listed only | `[Draft]` = raw drafts exist | `[Complete]` = s
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 85 | When to Optimize (and When Not To) | [Stub] |
+| Ch 85 | When to Optimize (and When Not To) | [Complete] |
 | Ch 86 | Profiling-First | [Stub] |
 | Ch 87 | Latency vs. Throughput Trade-offs | [Stub] |
 | Ch 88 | Caching: Layers, Invalidation, Failure Modes | [Stub] |
