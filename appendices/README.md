@@ -7,7 +7,7 @@ Reference material that complements the main chapters.
 | Appendix | Title | Status |
 |----------|-------|--------|
 | A | Decision Frameworks | [Stub] |
-| B | Common Engineering Smells | [Stub] |
+| B | [Common Engineering Smells](appendix-b-common-engineering-smells.md) | [Complete] |
 | C | Architecture Patterns Catalog | [Stub] |
 | D | Full Glossary | [Stub] |
 

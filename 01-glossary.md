@@ -94,9 +94,29 @@ Terms are added as chapters are completed. If a term is used in a chapter but no
 
 **state space explosion**: The condition where mutable state variables combine to produce a number of possible system configurations that exceeds what engineers can anticipate or test. A primary failure mode of unconstrained mutable state. First introduced in: [Part I, Ch 02](part01-systems-thinking/ch02-complexity-is-the-enemy.md).
 
+**measured bottleneck**: A component confirmed, through end-to-end measurement, to be the actual constraint limiting a system against a violated requirement — as distinct from a local hotspot, a component that merely profiles as slow in isolation without evidence it limits the system overall. First introduced in: [Part XII, Ch 85](part12-performance/ch85-when-to-optimize.md).
+
 **MTBF (Mean Time Between Failures)**: A reliability paradigm that optimizes for preventing failures from occurring. Contrasted with MTTR. First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 
 **MTTR (Mean Time To Recovery)**: A reliability paradigm that accepts failures as inevitable and optimizes for recovering from them quickly. Contrasted with MTBF. First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
+
+**Optimization Gate**: The condition that must hold before performance work counts as justified engineering rather than speculative refinement: a documented requirement (an SLO, a cost budget, a measured UX threshold) is being violated, and a measured bottleneck — not merely a local hotspot — has been identified as the cause. First introduced in: [Part XII, Ch 85](part12-performance/ch85-when-to-optimize.md).
+
+**sampling profiler**: A profiler that periodically interrupts execution to record the active call stack, approximating where time is spent statistically rather than exactly. Imposes low enough overhead to run against production traffic. Contrasted with instrumenting profiler. First introduced in: [Part XII, Ch 86](part12-performance/ch86-profiling-first.md).
+
+**instrumenting profiler**: A profiler that injects measurement code at every function's entry and exit, recording an exact call count and duration for every invocation. Delivers precision a sampling profiler cannot, at overhead heavy enough to alter the timing it measures (the observer effect). Contrasted with sampling profiler. First introduced in: [Part XII, Ch 86](part12-performance/ch86-profiling-first.md).
+
+**observer effect**: The distortion a profiling or measurement tool introduces into the very system it is observing — an instrumenting profiler's injected timing code can alter cache behavior and scheduling enough to change which code path actually dominates. First introduced in: [Part XII, Ch 86](part12-performance/ch86-profiling-first.md).
+
+**flame graph**: A visualization that aggregates sampled stack traces by merging identical call stacks and sizing each frame's width to the proportion of time spent in it, making a dominant execution path visible without preserving chronological order. First introduced in: [Part XII, Ch 86](part12-performance/ch86-profiling-first.md).
+
+**tail latency**: The latency experienced by the slowest fraction of requests (commonly reported as a p95, p99, or p99.9 percentile), as distinct from and not necessarily correlated with average or median latency. A system can have an excellent average while its tail quietly degrades from a different cause entirely. First introduced in: [Part XII, Ch 87](part12-performance/ch87-latency-vs-throughput.md).
+
+**request coalescing**: Merging multiple concurrent, identical in-flight requests into a single execution whose result is shared across all callers, avoiding redundant load on whatever backs the request. Used both as a general throughput lever and as the standard mitigation for a cache stampede. First introduced in: [Part XII, Ch 87](part12-performance/ch87-latency-vs-throughput.md).
+
+**cache stampede**: A failure mode (also called a thundering herd) where a popular cache entry expires or is invalidated and many concurrent requests miss it simultaneously, all attempting to regenerate it against the backing store at once. Mitigated with request coalescing or a short-lived regeneration lock. First introduced in: [Part XII, Ch 88](part12-performance/ch88-caching.md).
+
+**zero-cost abstraction**: A precise engineering claim, originating with Rust and C++, that an abstraction is verified to compile away entirely, producing the same machine code a programmer would have written by hand — distinct from the much looser colloquial use of the phrase to mean an abstraction's overhead is merely small enough not to worry about. First introduced in: [Part XII, Ch 90](part12-performance/ch90-cost-of-abstraction.md).
 
 **optimization target**: An objective a system is designed to optimize — latency, throughput, reliability, cost of change, etc. Targets may be explicit (documented) or implicit (inferred). First introduced in: [Part I, Ch 01](part01-systems-thinking/ch01-what-engineering-optimizes.md).
 

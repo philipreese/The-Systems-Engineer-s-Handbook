@@ -8,12 +8,12 @@ When to optimize, how to profile, and the trade-offs between latency, throughput
 
 | Chapter | Title | Status |
 |---------|-------|--------|
-| Ch 85 | When to Optimize (and When Not To) | [Stub] |
-| Ch 86 | Profiling-First | [Stub] |
-| Ch 87 | Latency vs. Throughput Trade-offs | [Stub] |
-| Ch 88 | Caching: Layers, Invalidation, Failure Modes | [Stub] |
-| Ch 89 | Data Structure and Algorithm Selection in Practice | [Stub] |
-| Ch 90 | The Cost of Abstraction | [Stub] |
+| Ch 85 | When to Optimize (and When Not To) | [Complete] |
+| Ch 86 | Profiling-First | [Complete] |
+| Ch 87 | Latency vs. Throughput Trade-offs | [Complete] |
+| Ch 88 | Caching: Layers, Invalidation, Failure Modes | [Complete] |
+| Ch 89 | Data Structure and Algorithm Selection in Practice | [Complete] |
+| Ch 90 | The Cost of Abstraction | [Complete] |
 
 ---
 
